@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_push_swap.c                                   :+:      :+:    :+:   */
+/*   file_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 10:08:11 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 10:09:10 by dnieto-c         ###   ########.fr       */
+/*   Created: 2022/07/01 10:40:12 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/07/01 12:57:43 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	ft_mini_push_swap(int *args_nums, int size_args_num)
+int	ft_value_is_in_stack(t_stack *s, int value)
 {
-    printf("We have to do mini push swap\n");
+	int	i;
+
+	i = 0;
+	while (i < s->length)
+	{
+		if (s->tab[i] == value)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
+void    ft_do_rrr(t_stack *a, t_stack *b, int number_rrr)
+{
+    int i;
+
+    i = 0;
+    while (i < number_rrr)
+    {
+        ft_rrr(a, b);
+        i++;
+    }
+}

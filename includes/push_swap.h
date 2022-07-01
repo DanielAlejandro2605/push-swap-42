@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 11:11:46 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/01 13:05:12 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# define ERROR_MESSAGE "Error\n"
+# define ERROR_MESSAGE "Error here\n"
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 # define BUFFER_SIZE 4

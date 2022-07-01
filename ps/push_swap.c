@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:22:38 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 10:32:51 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:57:43 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_do_push_swap(int *args, int amount_args)
 {

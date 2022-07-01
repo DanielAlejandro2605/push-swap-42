@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "../includes/stack.h"
 
 void    ft_rotate(t_stack *s)
 {
@@ -47,6 +47,4 @@ void	ft_rr(t_stack *a, t_stack *b)
 	ft_rotate(a);
 	ft_rotate(b);
 	printf("rr\n");
-	// printf("HAY ALGO AL MENOS\n");
-	// sleep(5);
 }

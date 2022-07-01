@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:16:33 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/28 22:03:15 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/01 12:58:32 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "../includes/stack.h"
 
 void	ft_pa(t_stack *a, t_stack *b)
 {

@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:28:06 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 09:39:51 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:59:16 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int		ft_check_doubles(int *array, int size_array)
 {

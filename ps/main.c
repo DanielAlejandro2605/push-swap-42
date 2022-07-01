@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:05:53 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 10:07:40 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:57:58 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int main(int argc, char *argv[])
 {

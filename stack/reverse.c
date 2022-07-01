@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 19:09:43 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/29 16:06:05 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/01 13:08:02 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "../includes/stack.h"
 
 void	ft_reverse(t_stack *s)
 {
@@ -51,6 +51,4 @@ void	ft_rrr(t_stack *a, t_stack *b)
 	ft_reverse(a);
 	ft_reverse(b);
 	printf("rrr\n");
-	// printf("HAY ALGO AL MENOS\n");
-	// sleep(5);
 }

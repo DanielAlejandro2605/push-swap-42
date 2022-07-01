@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../includes/stack.h"
 
 void    ft_free_stack(t_stack *s)
 {

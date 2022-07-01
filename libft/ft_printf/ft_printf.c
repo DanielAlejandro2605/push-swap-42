@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:02:10 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/13 11:07:17 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/01 13:15:07 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,4 @@ int	ft_get_format(va_list args, const char format)
 	else if (format == '%')
 		length_print += ft_putchar('%');
 	return (length_print);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	int return_value;
-
-	return_value = printf("Hola\n");
-	printf("%d %c\n", return_value, '4');
 }

@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_is_valid_format_args(char **args)
 {

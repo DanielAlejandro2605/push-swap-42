@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../includes/stack.h"
 
 void	ft_print_stack_a(t_stack *s)
 {

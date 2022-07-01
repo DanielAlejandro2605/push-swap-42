@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_free_list_op(list_op *op_list)
 {

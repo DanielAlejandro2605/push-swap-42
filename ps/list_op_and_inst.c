@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 list_op	*ft_new_element_list_op(int value, lst_ins *instructions)
 {
@@ -63,7 +63,6 @@ lst_ins	*ft_initialize_lst_inst(void)
 lst_ins	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
 {
 	lst_ins	*instructions;
-	int		better_case;
 
 	instructions = ft_initialize_lst_inst();
 	if (!instructions)

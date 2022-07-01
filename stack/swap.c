@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:05:53 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/13 12:02:46 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:58:32 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "../includes/stack.h"
 
 void    ft_swap(t_stack *s)
 {   
