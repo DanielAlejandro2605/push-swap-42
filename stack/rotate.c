@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/10 19:09:37 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/06/10 19:09:37 by dnieto-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "stack.h"
+
+void    ft_rotate(t_stack *s)
+{
+    int value_to_last = s->tab[0];
+    int	i;
+
+	if (s->length >= 2)
+	{
+		i = 1;
+		while(i < s->length)
+		{
+			s->tab[i - 1] = s->tab[i];
+			i++;
+		}
+		s->tab[i - 1] = value_to_last;
+		s->top = s->tab[0];
+	}
+}
+
+void	ft_ra(t_stack *a)
+{
+	ft_rotate(a);
+	printf("ra\n");
+}
+
+void	ft_rb(t_stack *b)
+{
+	ft_rotate(b);
+	printf("rb\n");
+}
+
+void	ft_rr(t_stack *a, t_stack *b)
+{
+	ft_rotate(a);
+	ft_rotate(b);
+	printf("rr\n");
+	// printf("HAY ALGO AL MENOS\n");
+	// sleep(5);
+}

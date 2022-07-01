@@ -1,0 +1,69 @@
+Proyecto:
+1. Verificar argumentos:
+	Si no hay argumentos, el programa no debera mostrar nada.
+	Si hay argumentos:
+	a. Ver en todos los argumentos se  trata de caracteres que representan un cifra, es decir no debe haber letras..
+	b. Todos los argumentos deben caber dentro de un int.
+	c. No debe haber numeros duplicados.
+	d. Como vas a tratar el caso de un linea vacia ?
+
+Para hacer esto, convierto los argumentos a int y miro las condiciones, en caso de que no se cumplan, hago free e imprimo "Error\n"
+Si todo va bien, de igual forma hago free al tab int de los argumentos y los paso como caracteres.
+	
+2. Vuelvo a calcular  
+1. Funcion que calcula porque lado de la stack es mejor llevar el numero al top de la Stack A.
+	Si por arriba o por debajo segun el indice del numero en la stack A. 
+	Es decir si vamos a hacer ra o rra para llevar el numero al top de la stack A.
+
+2. Funcion que crea la lista de pasos para ubicar el numero en el lugar indicado segun el estado actual de la Stack B.
+	Es decir, que hay que cambiar la lista de cada elemento de la stack A cada que modifiquemos la stack B.
+	Para crear dicha lista, hay que tener en cuenta dos cosas:
+	2.1 Movimientos para llevar el elemento al top de la stack A, para esto la funcion del primer paso.
+	2.2 Movimiento en la Stack B de manera que antes de hacer push, la Stack B este en el estado ideal para
+	recibir dicho numero.
+
+	Para obtener el estado ideal de la stack B antes de hacer el push b, podemos seguir esta logica:
+	Si el numero que queremos enviar es menor a todos los elementos de la stack B, 
+	tengo que hacer que el top de la stack B sea el numero mas grande (Funcion que haga esto)
+
+	Sino, encontrar el numero mas grande de todos los numeros que son mas pequenos de este valor que
+	queremos enviar y hacer que vaya al top (Funcion que busque este valor)
+
+	Una funcion que llevar al top dicho un valor, bien sea por debajo o por arriba.
+
+1. 	For check the arguments, we use the function int	*ft_check_arguments(char **args);
+	This function will basically use two functions for check the arguments:
+	(-)	int	ft_is_valid_format_args(char **args) will check :
+		- The length of the arguments, in the case of empty string or number of characters greather than int limits.
+		- The arguments have only numberical characters and sign '+' or '-'.
+		- The amount of sign '+' or '-' in the arguments, it wouldn't be greather than 1 sign for each argument.
+	(-) int	ft_is_valid_range(char **args) will check :
+		- The correct range of arguments will remain within the int limits, we check the overflow cases.
+
+	Files : arguments.c and arguments_utils.c 
+
+2.	Once the program validate the arguments, the function 
+	ft_do_push_swap(int *args, int amount_args) will perform two actions:
+	(-) Check if we really needle to perform the push swap algorithm, in the case that the 
+		arguments are already sorted.
+	(-) Otherwise, it will indicates where algorithm apply, in other words:
+		- ft_mini_push_swap -> For an amount of arguments less and equal to 10.
+    	- ft_push_swap      -> For an amount of arguments greather than 10.
+
+3.	Mini push swap
+
+4.	Push Swap
+	The function void	ft_push_swap(int *args_nums, int size_args_num)
+	will initialize both stacks and perform the algorithm for sort the stack A using
+	the possible operations.
+
+	(-) ft_sort:
+		
+Podriamos hacer una funcion que sea no 10 sino 15 o algo asi?
+
+ft_push_swap:
+(-) Inicializar ambas stack.
+(-) Obtener mejor lista de operaciones con <\ft_get_better_operation_list/>
+(-) Imprimir lista de operaciones mas optimizada.
+(-) Liberar memoria de la lista de operaciones.
+(-) Liberar ambas stack.
