@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:02:10 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 13:15:07 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:05:22 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_printf(const char *str, ...)
 {

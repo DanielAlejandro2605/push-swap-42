@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:09:26 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/13 11:07:23 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:05:31 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_len_ptr(unsigned long long int_pointer)
 {

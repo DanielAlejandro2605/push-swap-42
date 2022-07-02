@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:05:17 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/13 11:06:57 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:05:49 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_putchar(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:22:38 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 12:57:43 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/02 19:12:41 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_do_push_swap(int *args, int amount_args)
 	}
 	else
 	{
-		if (amount_args > 10)
+		if (amount_args > 5)
 			ft_push_swap(args, amount_args);
 		else
 			ft_mini_push_swap(args, amount_args);

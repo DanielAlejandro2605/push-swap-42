@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 13:05:12 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/02 19:06:51 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <stdio.h>
-# include <stddef.h>
 # include <fcntl.h>
 # include <unistd.h>
 
 # define ERROR_MESSAGE "Error here\n"
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
-# define BUFFER_SIZE 4
 
 /*Structures of the project: */
 typedef struct stack
@@ -71,6 +69,11 @@ t_stack	*ft_initialize_b(void);
 /*Functions to perform mini push swap
 File : mini_push_swap.c*/
 void	ft_mini_push_swap(int *args_nums, int size_args_num);
+void	ft_mini_sort(t_stack *a, t_stack *b);
+int     *ft_first_step(t_stack *a, t_stack *b);
+void	ft_sort_3(t_stack *s);
+int     *ft_get_tab_sorted(t_stack *a);
+int     *ft_get_tab_from_stack(t_stack *a, int size);
 /*Function to sort elements
 File : sort.c*/
 void	ft_sort(t_stack *a, t_stack *b);
@@ -140,8 +143,8 @@ Functions to swap
 File : swap.c
 */
 void    ft_swap(t_stack *s);
-void	ft_sa(t_stack *a, t_stack *b);
-void	ft_sb(t_stack *a, t_stack *b);
+void	ft_sa(t_stack *a);
+void	ft_sb(t_stack *b);
 void	ft_ss(t_stack *a, t_stack *b);
 /*
 Functions to push

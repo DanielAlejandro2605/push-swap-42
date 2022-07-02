@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:00:37 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/29 09:33:16 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/02 18:27:37 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ Functions to swap
 File : swap.c
 */
 void    ft_swap(t_stack *s);
-void	ft_sa(t_stack *a, t_stack *b);
-void	ft_sb(t_stack *a, t_stack *b);
+void	ft_sa(t_stack *a);
+void	ft_sb(t_stack *b);
 void	ft_ss(t_stack *a, t_stack *b);
 /*
 Functions to push

@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 08:46:36 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/06/13 11:07:04 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:05:14 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int		ft_strlen_int(char *s)
 {

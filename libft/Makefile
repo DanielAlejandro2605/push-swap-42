@@ -21,7 +21,8 @@ DIR_GNL				=	./gnl/
 SOURCES_GNL			=	get_next_line.c get_next_line_utils.c
 SRCS_GNL			=	$(addprefix $(DIR_GNL), $(SOURCES_GNL))
 
-ALL_SRCS			=	$(SRCS_LIBFT) $(SRCS_FT_PRINTF) $(SRCS_GNL)
+# ALL_SRCS			=	$(SRCS_LIBFT) $(SRCS_FT_PRINTF) $(SRCS_GNL)
+ALL_SRCS			=	$(SOURCES_LIBFT) $(SOURCES_GNL) $(SOURCES_FT_PRINTF)
 
 OBJS				= 	$(ALL_SRCS:.c=.o)
 
