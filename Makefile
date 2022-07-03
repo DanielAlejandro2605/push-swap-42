@@ -32,7 +32,7 @@ INC = -I includes/
 all	:	$(NAME_P)
 
 $(NAME_P) : do_libft $(SRCO_PS) $(SRCO_STACK) $(LIBFT_A)
-	gcc -o $(NAME_P) $(LIBFT_A) $(SRCO_PS) $(SRCO_STACK)
+	gcc -o $(NAME_P) -L $(LIBFT_A) $(SRCO_PS) $(SRCO_STACK)
 
 %.o : %.c
 	gcc $(FLAG) -c $< -o $@ $(INC)

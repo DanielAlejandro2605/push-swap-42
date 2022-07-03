@@ -10,6 +10,9 @@ SOURCES_LIBFT		=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split
 						ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c \
 						ft_lstdelone.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 						ft_lstadd_back.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+						ft_strlen_int.c
+
+# SOURCES_NEW_F_LIBFT	=	ft_strlen_int.c
 
 SRCS_LIBFT			=	$(addprefix $(DIR_LIBFT), $(SOURCES_LIBFT))
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/02 19:06:51 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/03 21:45:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 # define ERROR_MESSAGE "Error here\n"
 # define MAX_INT 2147483647
@@ -180,7 +181,7 @@ void    ft_free_tab(int *tab);
 void    ft_free_tab_and_assign(int *tab, t_stack *s);
 void	ft_create_tab_for_first_push(t_stack *s, int *tab, int value);
 
-int		ft_strlen(char *s);
+int		ft_strlen_int(char *s);
 int		ft_atoi(const char *str);
 // /*
 // Utils functions of LIBFT
