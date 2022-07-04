@@ -1,47 +1,84 @@
 NAME				= 	libft.a
 
-DIR_LIBFT			=	./libft/
-SOURCES_LIBFT		=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-						ft_strlcat.c ft_strncmp.c ft_atoi.c ft_isalpha.c ft_substr.c \
-						ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
-						ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_memcpy.c \
-						ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
-						ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-						ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c \
-						ft_lstdelone.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-						ft_lstadd_back.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-						ft_strlen_int.c
+SOURCE_DIR			=	./src/
 
-# SOURCES_NEW_F_LIBFT	=	ft_strlen_int.c
+_SOURCES_LIBFT		=	ft_isalnum.c \
+						ft_isprint.c \
+						ft_memcmp.c \
+						ft_putchar_fd.c \
+						ft_split.c \
+						ft_strlcat.c \
+						ft_strncmp.c \
+						ft_atoi.c \
+						ft_isalpha.c \
+						ft_substr.c \
+						ft_itoa.c \
+						ft_memcpy.c \
+						ft_putendl_fd.c \
+						ft_strchr.c \
+						ft_strlcpy.c \
+						ft_strnstr.c \
+						ft_tolower.c \
+						ft_bzero.c \
+						ft_isascii.c \
+						ft_memcpy.c \
+						ft_memmove.c \
+						ft_putnbr_fd.c \
+						ft_strdup.c \
+						ft_strlen.c \
+						ft_strrchr.c \
+						ft_toupper.c \
+						ft_calloc.c \
+						ft_isdigit.c \
+						ft_memchr.c \
+						ft_memset.c  \
+						ft_putstr_fd.c \
+						ft_strjoin.c \
+						ft_strmapi.c \
+						ft_strtrim.c \
+						ft_striteri.c \
+						ft_lstdelone.c \
+						ft_lstnew.c \
+						ft_lstadd_front.c \
+						ft_lstsize.c \
+						ft_lstlast.c \
+						ft_lstadd_back.c \
+						ft_lstclear.c \
+						ft_lstiter.c \
+						ft_lstmap.c
 
-SRCS_LIBFT			=	$(addprefix $(DIR_LIBFT), $(SOURCES_LIBFT))
+_SOURCES_MY_FUNCTIONS	=	ft_printf.c \
+							ft_print_ptr.c \
+							ft_print_unsigned.c \
+							ft_simple_utils.c \
+							get_next_line.c \
+							get_next_line_utils.c \
+							ft_strlen_int.c
 
-DIR_FT_PRINTF		=	./ft_printf/
-SOURCES_FT_PRINTF	=	ft_printf.c ft_print_ptr.c ft_print_unsigned.c ft_simple_utils.c
-SRCS_FT_PRINTF		=	$(addprefix $(DIR_FT_PRINTF), $(SOURCES_FT_PRINTF))
+_SRCS					=	$(_SOURCES_LIBFT) $(_SOURCES_MY_FUNCTIONS)
 
-DIR_GNL				=	./gnl/
-SOURCES_GNL			=	get_next_line.c get_next_line_utils.c
-SRCS_GNL			=	$(addprefix $(DIR_GNL), $(SOURCES_GNL))
+SRCS					=	$(addprefix $(SOURCE_DIR), $(_SRCS))
 
-# ALL_SRCS			=	$(SRCS_LIBFT) $(SRCS_FT_PRINTF) $(SRCS_GNL)
-ALL_SRCS			=	$(SOURCES_LIBFT) $(SOURCES_GNL) $(SOURCES_FT_PRINTF)
+SRCS_OBJS				=	$(SRCS:.c=.o)
 
-OBJS				= 	$(ALL_SRCS:.c=.o)
+CC						= 	gcc
 
-CC					= 	gcc
+RM						= 	rm -f
 
-RM					= 	rm -f
+CFLAGS					= 	-Wall -Wextra -Werror -I.
 
-CFLAGS				= 	-Wall -Wextra -Werror -I.
+INC						=	-I includes/
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS) libft.h
+$(NAME):		$(SRCS_OBJS)
+				ar rcs $(NAME) $(SRCS_OBJS)
+
+%.o : %.c
+	$(CC) $(FLAG) -c $< -o $@ $(INC)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(SRCS_OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)

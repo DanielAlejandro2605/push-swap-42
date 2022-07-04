@@ -85,6 +85,17 @@ void	ft_improve_inst_for_value(lst_ins *inst_list)
 	inst_list->total_amt += inst_list->amt_rrr;
 }
 
+void	ft_print_list_inst(lst_ins *list_instruction)
+{
+	ft_printf("amount ra = %d\n", list_instruction->amt_ra);
+	ft_printf("amount rb = %d\n", list_instruction->amt_rb);
+	ft_printf("amount rr = %d\n", list_instruction->amt_rr);
+	ft_printf("amount rra = %d\n", list_instruction->amt_rra);
+	ft_printf("amount rrb = %d\n", list_instruction->amt_rrb);
+	ft_printf("amount rrr = %d\n", list_instruction->amt_rrr);
+	ft_printf("total amount : %d\n", list_instruction->total_amt);
+}
+
 /*void	ft_print_lst_op(list_op *begin_list)
 {
 	list_op	*tmp;

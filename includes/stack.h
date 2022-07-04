@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:00:37 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/02 18:27:37 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/05 00:07:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define ERROR_MESSAGE "Error\n"
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 typedef struct stack
 {

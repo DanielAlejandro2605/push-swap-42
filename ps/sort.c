@@ -16,9 +16,10 @@ void	ft_sort(t_stack *a, t_stack *b)
 {
 	list_op	*operation_lst;
 	list_op	*to_do;
-
+	
 	ft_pb(a, b);
 	ft_pb(a, b);
+	ft_printf("");
 	while (a->length > 0)
 	{
 		operation_lst = ft_create_list_operations(a, b);

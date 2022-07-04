@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/03 21:45:37 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/05 00:07:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,10 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include "../libft/libft.h"
-
-# define ERROR_MESSAGE "Error here\n"
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
+# include "../libft/includes/libft.h"
+# include "../includes/stack.h"
 
 /*Structures of the project: */
-typedef struct stack
-{
-    int     top;
-    int     length;
-    int     *tab;
-}           t_stack;
-
 typedef struct  list_instruction
 {
     int     amt_ra;
@@ -127,10 +117,12 @@ void	ft_get_inst_for_stack_a(lst_ins *inst_list, t_stack *a, int value);
 void	ft_get_inst_for_stack_b(lst_ins *inst_list, t_stack *b, int value);
 void	ft_improve_rotate_op(lst_ins *inst_list);
 void	ft_improve_reverse_op(lst_ins *inst_list);
+void	ft_print_list_inst(lst_ins *list_instruction);
 /*Functions utils for get instruction list
 File : list_instruction_utils.c*/
 int		ft_take_top_a_reversing(t_stack *a, int value);
 int		ft_take_top_a_rotating(t_stack *a, int value);
+
 // void	ft_print_lst_inst(lst_ins *inst_list); // To delete
 
 /*
@@ -139,68 +131,6 @@ File: free.c
 */
 void	ft_free_list_op(list_op *op_list);
 void    ft_free_inst_list(lst_ins *list);
-/*
-Functions to swap
-File : swap.c
-*/
-void    ft_swap(t_stack *s);
-void	ft_sa(t_stack *a);
-void	ft_sb(t_stack *b);
-void	ft_ss(t_stack *a, t_stack *b);
-/*
-Functions to push
-File : push.c
-*/
-void	ft_pa(t_stack *a, t_stack *b);
-void	ft_pb(t_stack *a, t_stack *b);
-void    ft_push(t_stack *s1, t_stack *s2);
-void    ft_update_from_push(t_stack *s);
-void    ft_update_to_push(t_stack *s, int value);
-/*
-Functions to rotate
-File : rotate.c
-*/
-void    ft_rotate(t_stack *s);
-void	ft_ra(t_stack *a);
-void	ft_rb(t_stack *b);
-void	ft_rr(t_stack *a, t_stack *b);
-/*
-Functions to reverse
-File : reverse.c
-*/
-void	ft_reverse(t_stack *s);
-void	ft_rra(t_stack *a);
-void	ft_rrb(t_stack *b);
-void	ft_rrr(t_stack *a, t_stack *b);
-/*
-Functions for free
-File : free.c
-*/
-void    ft_free_stack(t_stack *s);
-void    ft_free_tab(int *tab);
-void    ft_free_tab_and_assign(int *tab, t_stack *s);
-void	ft_create_tab_for_first_push(t_stack *s, int *tab, int value);
-
-int		ft_strlen_int(char *s);
-int		ft_atoi(const char *str);
-// /*
-// Utils functions of LIBFT
-// File : libft_functions.c
-// */
-// char	*get_next_line(int fd);
-// void	ft_get_next_line(char *buffer_aux, char buffer_static[]);
-// char	*ft_read_file(int fd, char buffer_static[], char *buffer_aux);
-// char	*ft_concatenation(char *buffer_aux, char *buffer_file);
-// char	*ft_get_line(char *buffer_aux);
-// int		ft_atoi(const char *str);
-// int		ft_strncmp(const char *s1, const char *s2, size_t n);
-// char	*ft_strdup(char *s);
-// int		ft_strlen(char *s);
-// void	*ft_calloc(size_t nmemb, size_t size);
-// void	ft_bzero(void *s, size_t n);
-// char	*ft_strchr(const char *s, int c);
-// char	*ft_strjoin(char *s1, char *s2);
-
 /*
 Functions for develop the program
 File : develop_functions.c

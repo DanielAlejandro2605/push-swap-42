@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:08:11 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/02 19:09:57 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/04 21:06:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ void	ft_mini_push_swap(int *args_nums, int size_args_num)
 
 	a = ft_initialize_a(args_nums, size_args_num);
 	b = ft_initialize_b();
-	ft_mini_sort(a, b);
-	// ft_print_stack_a(a);
-	// ft_print_stack_b(b);
+	if (size_args_num == 2)
+	{
+		if (a->tab[0] > a->tab[1])
+			ft_sa(a);	
+	}
+	else if(size_args_num == 3)
+		ft_sort_3(a);
+	else
+		ft_mini_sort(a, b);
 	ft_free_stack(a);
 	ft_free_stack(b);
 }
@@ -33,24 +39,19 @@ void	ft_mini_sort(t_stack *a, t_stack *b)
 	int		*max_3_values;
 	
 	max_3_values = ft_first_step(a, b);
-	if (a->length <= 5)
-		ft_sort_3(a);
-	else
+	while (a->length > 3)
 	{
-		while (a->length > 3)
-		{
-			if (a->top == max_3_values[0] || a->top == max_3_values[1] || a->top == max_3_values[2])
+		if (a->top == max_3_values[0] || a->top == max_3_values[1] || a->top == max_3_values[2])
 				ft_ra(a);
-			else
-			{
-				operation_lst = ft_create_list_operations(a, b);
-				to_do = ft_get_ops_to_do(operation_lst);
-				ft_do_ops(to_do, a, b);
-				ft_free_list_op(operation_lst);	
-			}
+		else
+		{
+			operation_lst = ft_create_list_operations(a, b);
+			to_do = ft_get_ops_to_do(operation_lst);
+			ft_do_ops(to_do, a, b);
+			ft_free_list_op(operation_lst);	
 		}
-		ft_sort_3(a);
 	}
+	ft_sort_3(a);
 	ft_send_to_stack_a(a, b);
 	ft_free_tab(max_3_values);
 }
