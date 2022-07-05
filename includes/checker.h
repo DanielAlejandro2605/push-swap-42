@@ -27,18 +27,9 @@ int			ft_arg_have_only_one_sign(char *arg);
 Main functions:
 File : checker.c
 */
-int		ft_checker(int *args_nums, int size_args_num);
-char	*ft_get_list_instructions(void);
-// void	ft_exec_function(char *operation_name, l_stack *a, l_stack *b);
-// int		ft_stack_is_sort(l_stack **s);
-// int		ft_stack_is_empty(l_stack **b);
-
-// /*Utils for the develop of the program
-// File : develop_functions.c*/
-// void    ft_print_stack_a(l_stack *a);
-// void    ft_print_stack_b(l_stack *b);
-// void    ft_print_stack(l_stack *begin_list);
-// void    ft_print_args(char **args);
-// void	ft_print_stacks(l_stack *a, l_stack *b);
-
+void	ft_checker(char **argv);
+void    ft_exec_list_instructions(t_stack *a, t_stack *b);
+void	ft_exec_one_operation(char *op, t_stack *a, t_stack *b);
+int		ft_stack_is_sorted(t_stack *s);
+int		ft_stack_is_empty(t_stack *s);
 #endif

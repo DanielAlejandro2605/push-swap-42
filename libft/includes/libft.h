@@ -74,8 +74,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int		ft_strlen_int(char *s);
 
+/*My functions*/
+int		ft_strlen_int(char *s);
+char	*ft_strjoin_secure(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 /*
 All prototypes functions of ft_printf project.
 Directory : ft_printf
@@ -102,5 +105,4 @@ char	*ft_read_file(int fd, char *response);
 char	*ft_get_line(char *buffer);
 char	*ft_concatenation(char *res_buff_static, char *buff_file);
 char	*ft_advance_buffer(char *buff);
-char	*ft_strjoin_secure(char *s1, char *s2);
 #endif

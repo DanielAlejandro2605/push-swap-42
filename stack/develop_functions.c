@@ -5,19 +5,19 @@ void	ft_print_stack_a(t_stack *s)
 	int     i;
 
 	i = 0;
-	printf("*******************\n");
-	printf("    DATA OF A\n");
-	printf("   top    : %d\n", s->top);
-	printf("   length : %d\n", s->length);
-	printf("*******************\n");
+	ft_printf("*******************\n");
+	ft_printf("    DATA OF A\n");
+	ft_printf("   top    : %d\n", s->top);
+	ft_printf("   length : %d\n", s->length);
+	ft_printf("*******************\n");
 	while (i < s->length)
     {
-        printf("         %d\n", s->tab[i]);
+        ft_printf("         %d\n", s->tab[i]);
         i++;
     }
-	printf("        ---\n");
-	printf("         a ");
-	printf("\n");
+	ft_printf("        ---\n");
+	ft_printf("         a ");
+	ft_printf("\n");
 }
 
 void	ft_print_stack_b(t_stack *s)
@@ -25,19 +25,17 @@ void	ft_print_stack_b(t_stack *s)
 	int     i;
 
 	i = 0;
-	printf("*******************\n");
-	printf("    DATA OF B\n");
-	printf("   top    : %d\n", s->top);
-	printf("   length : %d\n", s->length);
-	printf("*******************\n");
-	// if(!s->tab)
-	// 	printf("No Inizializada");
+	ft_printf("*******************\n");
+	ft_printf("    DATA OF B\n");
+	ft_printf("   top    : %d\n", s->top);
+	ft_printf("   length : %d\n", s->length);
+	ft_printf("*******************\n");
 	while (i < s->length)
     {
-        printf("         %d\n", s->tab[i]);
+        ft_printf("         %d\n", s->tab[i]);
         i++;
     }
-	printf("        ---\n");
-	printf("         b ");
-	printf("\n");
+	ft_printf("        ---\n");
+	ft_printf("         b ");
+	ft_printf("\n");
 }

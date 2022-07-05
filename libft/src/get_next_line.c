@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:58:04 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/04 23:53:06 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/05 11:23:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*ft_concatenation(char *res_buff_static, char *buff_file)
 {
 	char	*temp_concatenation;
 
-	temp_concatenation = ft_strjoin(res_buff_static, buff_file);
+	temp_concatenation = ft_strjoin_secure(res_buff_static, buff_file);
 	free(res_buff_static);
 	return (temp_concatenation);
 }

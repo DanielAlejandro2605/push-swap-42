@@ -33,18 +33,18 @@ void    ft_rotate(t_stack *s)
 void	ft_ra(t_stack *a)
 {
 	ft_rotate(a);
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	ft_rb(t_stack *b)
 {
 	ft_rotate(b);
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
 void	ft_rr(t_stack *a, t_stack *b)
 {
 	ft_rotate(a);
 	ft_rotate(b);
-	printf("rr\n");
+	ft_printf("rr\n");
 }

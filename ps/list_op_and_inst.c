@@ -73,19 +73,9 @@ lst_ins	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
 	return (instructions);
 }
 
-void	ft_improve_inst_for_value(lst_ins *inst_list)
-{
-	ft_improve_reverse_op(inst_list);
-	ft_improve_rotate_op(inst_list);
-	inst_list->total_amt += inst_list->amt_ra;
-	inst_list->total_amt += inst_list->amt_rb;
-	inst_list->total_amt += inst_list->amt_rra;
-	inst_list->total_amt += inst_list->amt_rrb;
-	inst_list->total_amt += inst_list->amt_rr;
-	inst_list->total_amt += inst_list->amt_rrr;
-}
 
-void	ft_print_list_inst(lst_ins *list_instruction)
+
+/*void	ft_print_list_inst(lst_ins *list_instruction)
 {
 	ft_printf("amount ra = %d\n", list_instruction->amt_ra);
 	ft_printf("amount rb = %d\n", list_instruction->amt_rb);
@@ -96,7 +86,7 @@ void	ft_print_list_inst(lst_ins *list_instruction)
 	ft_printf("total amount : %d\n", list_instruction->total_amt);
 }
 
-/*void	ft_print_lst_op(list_op *begin_list)
+void	ft_print_lst_op(list_op *begin_list)
 {
 	list_op	*tmp;
 

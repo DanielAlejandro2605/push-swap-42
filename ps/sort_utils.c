@@ -82,10 +82,10 @@ int	ft_search_biggest_less_than_value(int value, t_stack *b)
 	int	biggest_less;
 	int	i;
 
-	i = 0;
+	i = -1;
 	biggest_less = 0;
 	biggest_previous = 0;
-	while (i < b->length)
+	while (++i < b->length)
 	{
 		if (b->tab[i] < value)
 		{
@@ -95,12 +95,9 @@ int	ft_search_biggest_less_than_value(int value, t_stack *b)
 				biggest_previous = 1;
 			}
 			else
-			{
 				if (b->tab[i] > biggest_less)
 					biggest_less = b->tab[i];
-			}
 		}
-		i++;
 	}
 	return (biggest_less);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:16:33 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 12:58:32 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/05 15:32:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_pa(t_stack *a, t_stack *b)
 {
 	ft_push(b, a);
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	ft_pb(t_stack *a, t_stack *b)
 {
 	ft_push(a, b);
-	printf("pb\n");
+	ft_printf("pb\n");
 }
 
 void	ft_push(t_stack *s1, t_stack *s2)

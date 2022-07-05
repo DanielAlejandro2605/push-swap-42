@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:22:38 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/04 21:25:34 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/05 15:13:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,28 +54,22 @@ void	ft_push_swap(int *args_nums, int size_args_num)
 	ft_free_stack(b);
 }
 
-t_stack	*ft_initialize_a(int *args_nums, int size_args_num)
+void	ft_mini_push_swap(int *args_nums, int size_args_num)
 {
-    t_stack	*a;
+	t_stack	*a;
+	t_stack	*b;
 
-    a = (t_stack *)malloc(sizeof(t_stack));
-    if (!a)
-        return (NULL);
-    a->top = args_nums[0];
-    a->length = size_args_num;
-    a->tab = args_nums;
-	return (a);
-}
-
-t_stack	*ft_initialize_b(void)
-{
-    t_stack	*b;
-
-    b = (t_stack *)malloc(sizeof(t_stack));
-    if (!b)
-        return (NULL);
-    b->top = -1;
-    b->length = 0;
-    b->tab = NULL;
-    return (b);
+	a = ft_initialize_a(args_nums, size_args_num);
+	b = ft_initialize_b();
+	if (size_args_num == 2)
+	{
+		if (a->tab[0] > a->tab[1])
+			ft_sa(a);	
+	}
+	else if(size_args_num == 3)
+		ft_sort_3(a);
+	else
+		ft_mini_sort(a, b);
+	ft_free_stack(a);
+	ft_free_stack(b);
 }

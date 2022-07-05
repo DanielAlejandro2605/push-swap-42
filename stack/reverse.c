@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 19:09:43 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 13:08:02 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/05 15:31:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ void	ft_reverse(t_stack *s)
 void	ft_rra(t_stack *a)
 {
 	ft_reverse(a);
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
 void	ft_rrb(t_stack *b)
 {
 	ft_reverse(b);
-	printf("rrb\n");
+	ft_printf("rrb\n");
 }
 
 void	ft_rrr(t_stack *a, t_stack *b)
 {
 	ft_reverse(a);
 	ft_reverse(b);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }

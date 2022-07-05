@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:00:37 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/05 00:07:31 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/05 15:33:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft/includes/libft.h"
 # define ERROR_MESSAGE "Error\n"
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
@@ -27,6 +28,10 @@ typedef struct stack
     int     *tab;
 }           t_stack;
 
+/*Functions to initialize both stacks
+File : init.c*/
+t_stack *ft_initialize_a(int *args_nums, int size_args_num);
+t_stack	*ft_initialize_b(void);
 /*
 Functions to swap
 File : swap.c

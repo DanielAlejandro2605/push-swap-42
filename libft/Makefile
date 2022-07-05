@@ -50,10 +50,10 @@ _SOURCES_LIBFT		=	ft_isalnum.c \
 _SOURCES_MY_FUNCTIONS	=	ft_printf.c \
 							ft_print_ptr.c \
 							ft_print_unsigned.c \
-							ft_simple_utils.c \
 							get_next_line.c \
-							get_next_line_utils.c \
-							ft_strlen_int.c
+							ft_strlen_int.c \
+							ft_strjoin_secure.c \
+							ft_strcmp.c
 
 _SRCS					=	$(_SOURCES_LIBFT) $(_SOURCES_MY_FUNCTIONS)
 
