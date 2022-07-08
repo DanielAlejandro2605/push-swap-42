@@ -30,3 +30,16 @@ void	ft_free_inst_list(t_lsti *list)
 	free(list);
 	list = NULL;
 }
+
+void	ft_free_tab_split(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}

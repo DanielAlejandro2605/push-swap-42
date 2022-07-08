@@ -85,3 +85,41 @@ int	*ft_check_arguments(char **args)
 	}
 	return (NULL);
 }
+
+int	*ft_check_only_one_args(char *one_arg)
+{
+	char	**args_split;
+
+	args_split = ft_split(one_arg, ' ');
+	if (ft_is_valid_format_args(args_split) && ft_is_valid_range(args_split))
+		return (ft_args_nums_atoi(args_split));
+	else
+	{
+		ft_free_tab_split(args_split);
+		return (NULL);
+	}
+}
+
+int	*ft_args_nums_atoi(char **args_split)
+{
+	int		*args_nums;
+	int		i;
+	int		size_args;
+
+	size_args = ft_count_args(args_split);
+	args_nums = (int *)malloc(sizeof(int) * (size_args));
+	i = 0;
+	while (args_split[i] && i < size_args)
+	{
+		args_nums[i] = ft_atoi(args_split[i]);
+		i++;
+	}
+	ft_free_tab_split(args_split);
+	if (ft_check_doubles(args_nums, size_args))
+		return (args_nums);
+	else
+	{
+		free(args_nums);
+		return (NULL);
+	}
+}

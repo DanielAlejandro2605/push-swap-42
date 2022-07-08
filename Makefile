@@ -4,10 +4,10 @@ NAME_C = checker
 _SRCS_PS				=	main.c arguments.c arguments_utils.c push_swap.c mini_push_swap.c \
 							sort.c sort_utils.c list_op_and_inst.c list_instruction.c list_instruction_improve.c \
 							free.c file_aux.c do_operations.c
-_SRCS_CHECKER			=	main.c arguments_checker.c arguments_utils.c checker.c 
+_SRCS_CHECKER			=	main.c arguments_checker.c arguments_utils.c checker.c ft_aux.c
 _SRCS_STACK				=	init.c push.c swap.c rotate.c reverse.c free_stack.c
 _SRCS_USED_LIBFT		=	ft_calloc.c ft_strlen.c ft_bzero.c ft_strlen_int.c \
-							ft_strchr.c ft_atoi.c \
+							ft_strchr.c ft_atoi.c ft_split.c \
 							ft_printf.c ft_print_unsigned.c ft_print_ptr.c ft_simple_utils.c \
 							ft_strjoin_secure.c ft_strcmp.c get_next_line.c
 

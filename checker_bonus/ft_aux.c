@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_aux.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 18:49:15 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 23:21:54 by dnieto-c         ###   ########.fr       */
+/*   Created: 2022/07/08 23:10:21 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/07/08 23:19:27 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	main(int argc, char *argv[])
+void	ft_error(void)
 {
-	char	**args_split;
+	ft_printf(ERROR_MESSAGE);
+	exit(1);
+}
 
-	if (argc == 1)
-		return (0);
-	else if (argc == 2)
+void	ft_free_tab_split(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
 	{
-		args_split = ft_split(argv[1], ' ');
-		ft_checker(args_split);
-		ft_free_tab_split(args_split);
+		free(tab[i]);
+		i++;
 	}
-	else if (argc > 2)
-		ft_checker(argv);
-	return (0);
+	free(tab);
 }

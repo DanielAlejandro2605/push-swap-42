@@ -73,7 +73,7 @@ void	ft_exec_one_operation(char *op, t_stack *a, t_stack *b)
 	else if ((ft_strcmp(op, "rrr\n")) == 0)
 		ft_rrr(a, b);
 	else
-		ft_printf(ERROR_MESSAGE);
+		ft_error();
 }
 
 int	ft_stack_is_sorted(t_stack *s)

@@ -72,27 +72,3 @@ t_lsti	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
 	ft_improve_inst_for_value(instructions);
 	return (instructions);
 }
-
-/*void	ft_print_list_inst(t_lsti *list_instruction)
-{
-	ft_printf("amount ra = %d\n", list_instruction->amt_ra);
-	ft_printf("amount rb = %d\n", list_instruction->amt_rb);
-	ft_printf("amount rr = %d\n", list_instruction->amt_rr);
-	ft_printf("amount rra = %d\n", list_instruction->amt_rra);
-	ft_printf("amount rrb = %d\n", list_instruction->amt_rrb);
-	ft_printf("amount rrr = %d\n", list_instruction->amt_rrr);
-	ft_printf("total amount : %d\n", list_instruction->total_amt);
-}
-
-void	ft_print_lst_op(t_lstop *begin_list)
-{
-	t_lstop	*tmp;
-
-	tmp = begin_list;
-	while (tmp)
-	{
-		printf("Value %d\n", tmp->value);
-		ft_print_t_lstit(tmp->list_inst);
-		tmp = tmp->next;
-	}	
-}*/

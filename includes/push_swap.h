@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 20:18:12 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/08 23:07:54 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ File : arguments.c*/
 int		ft_is_valid_format_args(char **args);
 int		ft_is_valid_range(char **args);
 int		*ft_check_arguments(char **args);
+int		*ft_check_only_one_args(char *one_arg);
+int		*ft_args_nums_atoi(char **args_split);
 /*Utils functions for check the arguments
 File : arguments_utils.c*/
 int		ft_check_doubles(int *array, int size_array);
@@ -119,4 +121,5 @@ File: free.c
 */
 void	ft_free_list_op(t_lstop *op_list);
 void	ft_free_inst_list(t_lsti *list);
+void	ft_free_tab_split(char **tab);
 #endif
