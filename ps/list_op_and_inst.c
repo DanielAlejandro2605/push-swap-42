@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_op.c                                          :+:      :+:    :+:   */
+/*   t_lstop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "../includes/push_swap.h"
 
-list_op	*ft_new_element_list_op(int value, lst_ins *instructions)
+t_lstop	*ft_new_element_lstop(int value, t_lsti *instructions)
 {
-	list_op	*new;
+	t_lstop	*new;
 
-	new = (list_op *)malloc(sizeof(list_op));
+	new = (t_lstop *)malloc(sizeof(t_lstop));
 	if (!new)
 		return (NULL);
 	new->value = value;
@@ -25,9 +25,9 @@ list_op	*ft_new_element_list_op(int value, lst_ins *instructions)
 	return (new);
 }
 
-void	ft_add_inst_to_lst_op(list_op **begin_list, list_op *elem)
+void	ft_add_inst_to_lst_op(t_lstop **begin_list, t_lstop *elem)
 {
-	list_op	*tmp;
+	t_lstop	*tmp;
 
 	if (elem)
 	{
@@ -43,11 +43,11 @@ void	ft_add_inst_to_lst_op(list_op **begin_list, list_op *elem)
 	}
 }
 
-lst_ins	*ft_initialize_lst_inst(void)
+t_lsti	*ft_initialize_t_lstit(void)
 {
-	lst_ins	*new_elem;
+	t_lsti	*new_elem;
 
-	new_elem = (lst_ins *)malloc(sizeof(lst_ins));
+	new_elem = (t_lsti *)malloc(sizeof(t_lsti));
 	if (!new_elem)
 		return (NULL);
 	new_elem->amt_ra = 0;
@@ -60,11 +60,11 @@ lst_ins	*ft_initialize_lst_inst(void)
 	return (new_elem);
 }
 
-lst_ins	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
+t_lsti	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
 {
-	lst_ins	*instructions;
+	t_lsti	*instructions;
 
-	instructions = ft_initialize_lst_inst();
+	instructions = ft_initialize_t_lstit();
 	if (!instructions)
 		return (NULL);
 	ft_get_inst_for_stack_a(instructions, a, value);
@@ -73,9 +73,7 @@ lst_ins	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
 	return (instructions);
 }
 
-
-
-/*void	ft_print_list_inst(lst_ins *list_instruction)
+/*void	ft_print_list_inst(t_lsti *list_instruction)
 {
 	ft_printf("amount ra = %d\n", list_instruction->amt_ra);
 	ft_printf("amount rb = %d\n", list_instruction->amt_rb);
@@ -86,15 +84,15 @@ lst_ins	*ft_get_instructions_for_value(t_stack *a, t_stack *b, int value)
 	ft_printf("total amount : %d\n", list_instruction->total_amt);
 }
 
-void	ft_print_lst_op(list_op *begin_list)
+void	ft_print_lst_op(t_lstop *begin_list)
 {
-	list_op	*tmp;
+	t_lstop	*tmp;
 
 	tmp = begin_list;
 	while (tmp)
 	{
 		printf("Value %d\n", tmp->value);
-		ft_print_lst_inst(tmp->list_inst);
+		ft_print_t_lstit(tmp->list_inst);
 		tmp = tmp->next;
 	}	
 }*/

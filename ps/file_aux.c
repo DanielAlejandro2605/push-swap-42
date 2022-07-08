@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:40:12 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/05 15:18:50 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/08 22:11:54 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ int	*ft_get_tab_from_stack(t_stack *a, int size)
 	return (tab);
 }
 
-void    ft_do_rrr(t_stack *a, t_stack *b, int number_rrr)
+void	ft_do_rrr(t_stack *a, t_stack *b, int number_rrr)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < number_rrr)
-    {
-        ft_rrr(a, b);
-        i++;
-    }
+	i = 0;
+	while (i < number_rrr)
+	{
+		ft_rrr(a, b);
+		i++;
+	}
 }

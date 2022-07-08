@@ -14,12 +14,11 @@
 
 void	ft_sort(t_stack *a, t_stack *b)
 {
-	list_op	*operation_lst;
-	list_op	*to_do;
-	
+	t_lstop	*operation_lst;
+	t_lstop	*to_do;
+
 	ft_pb(a, b);
 	ft_pb(a, b);
-	ft_printf("");
 	while (a->length > 0)
 	{
 		operation_lst = ft_create_list_operations(a, b);
@@ -47,7 +46,7 @@ void	ft_send_to_stack_a(t_stack *a, t_stack *b)
 		ft_pa(a, b);
 }
 
-void	ft_do_ops(list_op *op_list, t_stack *a, t_stack *b)
+void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b)
 {
 	ft_do_ra(a, op_list->list_inst->amt_ra);
 	ft_do_rra(a, op_list->list_inst->amt_rra);
@@ -58,10 +57,10 @@ void	ft_do_ops(list_op *op_list, t_stack *a, t_stack *b)
 	ft_pb(a, b);
 }
 
-list_op	*ft_get_ops_to_do(list_op *op_list)
+t_lstop	*ft_get_ops_to_do(t_lstop *op_list)
 {
-	list_op	*tmp;
-	list_op	*to_do;
+	t_lstop	*tmp;
+	t_lstop	*to_do;
 
 	to_do = op_list;
 	tmp = op_list;
@@ -74,11 +73,11 @@ list_op	*ft_get_ops_to_do(list_op *op_list)
 	return (to_do);
 }
 
-list_op	*ft_create_list_operations(t_stack *a, t_stack *b)
+t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b)
 {
-	list_op	*operation_lst;
-	list_op	*aux;
-	lst_ins	*list_instruction;
+	t_lstop	*operation_lst;
+	t_lstop	*aux;
+	t_lsti	*list_instruction;
 	int		i;
 
 	operation_lst = NULL;
@@ -87,7 +86,7 @@ list_op	*ft_create_list_operations(t_stack *a, t_stack *b)
 	while (i < a->length)
 	{
 		list_instruction = ft_get_instructions_for_value(a, b, a->tab[i]);
-		aux = ft_new_element_list_op(a->tab[i], list_instruction);
+		aux = ft_new_element_lstop(a->tab[i], list_instruction);
 		ft_add_inst_to_lst_op(&operation_lst, aux);
 		i++;
 	}

@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_improve_rotate_op(lst_ins *lst)
+void	ft_improve_rotate_op(t_lsti *lst)
 {
 	if (lst->amt_rra > 0 && lst->amt_rrb > 0)
 	{
@@ -32,7 +32,7 @@ void	ft_improve_rotate_op(lst_ins *lst)
 	}
 }
 
-void	ft_improve_reverse_op(lst_ins *lst)
+void	ft_improve_reverse_op(t_lsti *lst)
 {
 	if (lst->amt_ra > 0 && lst->amt_rb > 0)
 	{
@@ -60,7 +60,7 @@ void	ft_change_val(int *value1, int *value2, int *value3)
 	(void)value3;
 }
 
-void	ft_improve_inst_for_value(lst_ins *inst_list)
+void	ft_improve_inst_for_value(t_lsti *inst_list)
 {
 	ft_improve_reverse_op(inst_list);
 	ft_improve_rotate_op(inst_list);

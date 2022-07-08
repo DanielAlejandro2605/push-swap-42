@@ -12,15 +12,16 @@
 
 #include "../includes/stack.h"
 
-void    ft_rotate(t_stack *s)
+void	ft_rotate(t_stack *s)
 {
-    int value_to_last = s->tab[0];
-    int	i;
+	int	value_to_last;
+	int	i;
 
+	value_to_last = s->tab[0];
 	if (s->length >= 2)
 	{
 		i = 1;
-		while(i < s->length)
+		while (i < s->length)
 		{
 			s->tab[i - 1] = s->tab[i];
 			i++;

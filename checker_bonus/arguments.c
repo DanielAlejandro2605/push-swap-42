@@ -1,14 +1,28 @@
-#include "checker.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   arguments.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/02 15:43:06 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/07/02 15:43:06 by dnieto-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_valid_args(char **args)
+#include "../includes/checker.h"
+
+int	ft_is_valid_format_args(char **args)
 {
-	int	i;
-	int	j;
+	int			i;
+	int			j;
 
 	i = 0;
 	while (args[i])
 	{
-		if (ft_strlen(args[i]) > 11)
+		if (ft_strlen_int(args[i]) == 0 || ft_strlen_int(args[i]) > 11)
+			return (0);
+		if (!(ft_arg_have_only_one_sign(args[i])))
 			return (0);
 		j = 0;
 		while (args[i][j])
@@ -22,72 +36,52 @@ int	ft_valid_args(char **args)
 	return (1);
 }
 
-int	ft_isvalid_char(int c)
+int	ft_is_valid_range(char **args)
 {
-	if ((c >= '0' && c <= '9') || (c == '+') || (c == '-'))
-		return (1);
-	return (0);
-}
+	long int		*array_args;
+	int				size_args;
+	int				i;
 
-int    ft_count_args(char **args)
-{
-    int i;
-
-    i = 0;
-    while (args[i])
-        i++;
-    return (i);
-}
-
-int	ft_check_doubles(int *array, int size_array)
-{
-	int	i;
-	int	j;
-
+	size_args = ft_count_args(args);
+	array_args = (long int *)malloc(sizeof(long int) * (size_args));
 	i = 0;
-	while (i < size_array)
+	while (args[i] && i < size_args)
 	{
-		j = i + 1;
-		while (j < size_array)
+		array_args[i] = ft_atoi_overflow(args[i]);
+		if (array_args[i] < MIN_INT || array_args[i] > MAX_INT)
 		{
-			if (array[i] == array[j])
-				return (0);
-			j++;
+			free(array_args);
+			return (0);
 		}
 		i++;
 	}
+	free(array_args);
 	return (1);
 }
 
-int	*ft_apply_atoi_args(char **args)
+int	*ft_check_arguments(char **args)
 {
-	int		*array_args;
-	int		size_args;
-	int		i;
+	int	*args_nums;
+	int	size_args;
+	int	i;
 
-	size_args = ft_count_args(args);
-	array_args = (int *)malloc(sizeof(int) * (size_args));
-	i = 0;
-    while (args[i] && i < size_args)
+	if (ft_is_valid_format_args(args) && ft_is_valid_range(args))
 	{
-		array_args[i] = ft_atoi(args[i]);
-		if (!(array_args[i] > MIN_INT && array_args[i] <= MAX_INT))
+		size_args = ft_count_args(args);
+		args_nums = (int *)malloc(sizeof(int) * (size_args));
+		i = 0;
+		while (args[i] && i < size_args)
 		{
-			if (!(array_args[i] == MIN_INT))
-			{
-				printf(ARGUMENTS_NOT_INT_LIMITS);
-				free(array_args);
-				return (NULL);
-			}
+			args_nums[i] = ft_atoi(args[i]);
+			i++;
 		}
-		i++;
+		if (ft_check_doubles(args_nums, size_args))
+			return (args_nums);
+		else
+		{
+			free(args_nums);
+			return (NULL);
+		}
 	}
-	if (ft_check_doubles(array_args, size_args))
-		return (array_args);
-	else
-	{
-        printf (DOUBLES_ARG_MESSAGE);
-		free(array_args);
-		return NULL;
-	}
+	return (NULL);
 }

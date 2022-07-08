@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/08 22:14:41 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/07/08 22:14:41 by dnieto-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void	ft_free_list_op(list_op *op_list)
+void	ft_free_list_op(t_lstop *op_list)
 {
-	list_op	*tmp;
+	t_lstop	*tmp;
 
 	while (op_list)
 	{
 		tmp = op_list;
 		op_list = op_list->next;
-        ft_free_inst_list(tmp->list_inst);
+		ft_free_inst_list(tmp->list_inst);
 		free (tmp);
 	}
 }
 
-void    ft_free_inst_list(lst_ins *list)
+void	ft_free_inst_list(t_lsti *list)
 {
-    free(list);
-    list = NULL;
+	free(list);
+	list = NULL;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 19:09:43 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/05 15:31:11 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/08 22:18:39 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_reverse(t_stack *s)
 			i++;
 		value_to_first = s->tab[i - 1];
 		i = s->length - 1;
-		while(i > 0)
+		while (i > 0)
 		{
 			s->tab[i] = s->tab[i - 1];
 			i--;

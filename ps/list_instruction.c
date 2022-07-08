@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_get_inst_for_stack_a(lst_ins *inst_list, t_stack *a, int value)
+void	ft_get_inst_for_stack_a(t_lsti *inst_list, t_stack *a, int value)
 {
 	int		better_case;
 
@@ -29,7 +29,7 @@ void	ft_get_inst_for_stack_a(lst_ins *inst_list, t_stack *a, int value)
 	}
 }
 
-void	ft_get_inst_for_stack_b(lst_ins *inst_list, t_stack *b, int value)
+void	ft_get_inst_for_stack_b(t_lsti *inst_list, t_stack *b, int value)
 {
 	int		value_guide;
 	int		better_case;

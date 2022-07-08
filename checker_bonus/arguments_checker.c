@@ -45,7 +45,7 @@ int	ft_is_valid_range(char **args)
 	size_args = ft_count_args(args);
 	array_args = (long int *)malloc(sizeof(long int) * (size_args));
 	i = 0;
-    while (args[i] && i < size_args)
+	while (args[i] && i < size_args)
 	{
 		array_args[i] = ft_atoi_overflow(args[i]);
 		if (array_args[i] < MIN_INT || array_args[i] > MAX_INT)

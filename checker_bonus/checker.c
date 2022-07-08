@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/08 18:50:25 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/07/08 18:50:25 by dnieto-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/checker.h"
 
 void	ft_checker(char **argv)
 {
 	int		*args_nums;
 	t_stack	*a;
-    t_stack	*b;
+	t_stack	*b;
 
 	args_nums = ft_check_arguments(argv + 1);
 	if (args_nums)
@@ -23,7 +35,7 @@ void	ft_checker(char **argv)
 		ft_printf(ERROR_MESSAGE);
 }
 
-void    ft_exec_list_instructions(t_stack *a, t_stack *b)
+void	ft_exec_list_instructions(t_stack *a, t_stack *b)
 {
 	char		*operation;
 
@@ -61,10 +73,7 @@ void	ft_exec_one_operation(char *op, t_stack *a, t_stack *b)
 	else if ((ft_strcmp(op, "rrr\n")) == 0)
 		ft_rrr(a, b);
 	else
-	{
 		ft_printf(ERROR_MESSAGE);
-		exit(1);
-	}
 }
 
 int	ft_stack_is_sorted(t_stack *s)

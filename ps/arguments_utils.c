@@ -6,13 +6,13 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:28:06 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/01 12:59:16 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/08 22:14:20 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		ft_check_doubles(int *array, int size_array)
+int	ft_check_doubles(int *array, int size_array)
 {
 	int	i;
 	int	j;
@@ -34,11 +34,11 @@ int		ft_check_doubles(int *array, int size_array)
 	return (1);
 }
 
-long int	ft_atoi_overflow(const char *str)
+long	ft_atoi_overflow(const char *str)
 {
-	long int	result;
-	int		i;
-	int		negative;
+	long		result;
+	int			i;
+	int			negative;
 
 	if (!str)
 		return (0);
@@ -67,30 +67,30 @@ int	ft_isvalid_char(int c)
 	return (0);
 }
 
-int		ft_arg_have_only_one_sign(char *arg)
+int	ft_arg_have_only_one_sign(char *arg)
 {
 	int	i;
 	int	sign;
 
 	i = 0;
-	sign = 0; 
+	sign = 0;
 	while (arg[i])
 	{
 		if (arg[i] == '+' || arg[i] == '-')
 			sign++;
-		if(sign > 1)
+		if (sign > 1)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int		ft_count_args(char **args)
+int	ft_count_args(char **args)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (args[i])
-        i++;
-    return (i);
+	i = 0;
+	while (args[i])
+		i++;
+	return (i);
 }
