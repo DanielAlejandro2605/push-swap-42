@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:16:33 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/05 15:32:13 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/09 19:44:34 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
 
-void	ft_pa(t_stack *a, t_stack *b)
+void	ft_pa(t_stack *a, t_stack *b, int for_checker)
 {
 	ft_push(b, a);
-	ft_printf("pa\n");
+	if (!for_checker)
+		ft_printf("pa\n");
 }
 
-void	ft_pb(t_stack *a, t_stack *b)
+void	ft_pb(t_stack *a, t_stack *b, int for_checker)
 {
 	ft_push(a, b);
-	ft_printf("pb\n");
+	if (!for_checker)
+		ft_printf("pb\n");
 }
 
 void	ft_push(t_stack *s1, t_stack *s2)

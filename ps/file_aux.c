@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:40:12 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 22:11:54 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/09 19:51:25 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_do_rrr(t_stack *a, t_stack *b, int number_rrr)
 	i = 0;
 	while (i < number_rrr)
 	{
-		ft_rrr(a, b);
+		ft_rrr(a, b, 0);
 		i++;
 	}
 }

@@ -16,16 +16,17 @@ void	ft_sort(t_stack *a, t_stack *b)
 {
 	t_lstop	*operation_lst;
 	t_lstop	*to_do;
+	int		*max_3_values;
 
-	ft_pb(a, b);
-	ft_pb(a, b);
-	while (a->length > 0)
+	max_3_values = ft_first_step(a, b);
+	while (a->length > 3)
 	{
-		operation_lst = ft_create_list_operations(a, b);
+		operation_lst = ft_create_list_operations(a, b, max_3_values);
 		to_do = ft_get_ops_to_do(operation_lst);
 		ft_do_ops(to_do, a, b);
 		ft_free_list_op(operation_lst);
 	}
+	ft_sort_3(a);
 	ft_send_to_stack_a(a, b);
 }
 
@@ -38,12 +39,12 @@ void	ft_send_to_stack_a(t_stack *a, t_stack *b)
 	better_case_biggest_b = ft_better_case_for_take_top(b, biggest_b);
 	if (better_case_biggest_b == 1)
 		while (b->top != biggest_b)
-			ft_rb(b);
+			ft_rb(b, 0);
 	else if (better_case_biggest_b == 2)
 		while (b->top != biggest_b)
-			ft_rrb(b);
+			ft_rrb(b, 0);
 	while (b->length > 0)
-		ft_pa(a, b);
+		ft_pa(a, b, 0);
 }
 
 void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b)
@@ -54,7 +55,7 @@ void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b)
 	ft_do_rrb(b, op_list->list_inst->amt_rrb);
 	ft_do_rr(a, b, op_list->list_inst->amt_rr);
 	ft_do_rrr(a, b, op_list->list_inst->amt_rrr);
-	ft_pb(a, b);
+	ft_pb(a, b, 0);
 }
 
 t_lstop	*ft_get_ops_to_do(t_lstop *op_list)
@@ -73,7 +74,7 @@ t_lstop	*ft_get_ops_to_do(t_lstop *op_list)
 	return (to_do);
 }
 
-t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b)
+t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_3_values)
 {
 	t_lstop	*operation_lst;
 	t_lstop	*aux;
@@ -85,9 +86,14 @@ t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < a->length)
 	{
-		list_instruction = ft_get_instructions_for_value(a, b, a->tab[i]);
-		aux = ft_new_element_lstop(a->tab[i], list_instruction);
-		ft_add_inst_to_lst_op(&operation_lst, aux);
+		if ((a->tab[i] != max_3_values[0])
+			&& (a->tab[i] != max_3_values[1]
+				&& (a->tab[i] != max_3_values[2])))
+		{
+			list_instruction = ft_get_instructions_for_value(a, b, a->tab[i]);
+			aux = ft_new_element_lstop(a->tab[i], list_instruction);
+			ft_add_inst_to_lst_op(&operation_lst, aux);
+		}
 		i++;
 	}
 	return (operation_lst);

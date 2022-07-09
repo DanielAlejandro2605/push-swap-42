@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 23:07:54 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/09 20:03:38 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,8 @@ File : push_swap.c*/
 void	ft_do_push_swap(int *args, int amount_args);
 int		ft_args_is_already_sorted(int *args, int amount_args);
 void	ft_push_swap(int *args_nums, int size_args_num);
-void	ft_mini_push_swap(int *args_nums, int size_args_num);
 /*Functions to perform mini push swap
 File : mini_push_swap.c*/
-void	ft_mini_sort(t_stack *a, t_stack *b);
 int		*ft_first_step(t_stack *a, t_stack *b);
 void	ft_sort_3(t_stack *s);
 void	ft_handle_biggest_index(int biggest_index, t_stack *s);
@@ -70,7 +68,7 @@ void	ft_sort(t_stack *a, t_stack *b);
 void	ft_send_to_stack_a(t_stack *a, t_stack *b);
 void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b);
 t_lstop	*ft_get_ops_to_do(t_lstop *op_list);
-t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b);
+t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_3_values);
 /*Utils functions to sort the elements:
 File : sort_utils.c*/
 int		ft_better_case_for_take_top(t_stack *s, int value);

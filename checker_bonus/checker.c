@@ -51,27 +51,27 @@ void	ft_exec_list_instructions(t_stack *a, t_stack *b)
 void	ft_exec_one_operation(char *op, t_stack *a, t_stack *b)
 {
 	if ((ft_strcmp(op, "sa\n")) == 0)
-		ft_sa(a);
+		ft_sa(a, 1);
 	else if ((ft_strcmp(op, "sb\n")) == 0)
-		ft_sb(b);
+		ft_sb(b, 1);
 	else if ((ft_strcmp(op, "ss\n")) == 0)
-		ft_ss(a, b);
+		ft_ss(a, b, 1);
 	else if ((ft_strcmp(op, "pa\n")) == 0)
-		ft_pa(a, b);
+		ft_pa(a, b, 1);
 	else if ((ft_strcmp(op, "pb\n")) == 0)
-		ft_pb(a, b);
+		ft_pb(a, b, 1);
 	else if ((ft_strcmp(op, "ra\n")) == 0)
-		ft_ra(a);
+		ft_ra(a, 1);
 	else if ((ft_strcmp(op, "rb\n")) == 0)
-		ft_rb(b);
+		ft_rb(b, 1);
 	else if ((ft_strcmp(op, "rr\n")) == 0)
-		ft_rr(a, b);
+		ft_rr(a, b, 1);
 	else if ((ft_strcmp(op, "rra\n")) == 0)
-		ft_rra(a);
+		ft_rra(a, 1);
 	else if ((ft_strcmp(op, "rrb\n")) == 0)
-		ft_rrb(b);
+		ft_rrb(b, 1);
 	else if ((ft_strcmp(op, "rrr\n")) == 0)
-		ft_rrr(a, b);
+		ft_rrr(a, b, 1);
 	else
 		ft_error();
 }

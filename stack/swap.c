@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:05:53 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 22:20:27 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/09 19:45:34 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ void	ft_swap(t_stack *s)
 	}
 }
 
-void	ft_sa(t_stack *a)
+void	ft_sa(t_stack *a, int for_checker)
 {
 	ft_swap(a);
-	ft_printf("sa\n");
+	if (!for_checker)
+		ft_printf("sa\n");
 }
 
-void	ft_sb(t_stack *b)
+void	ft_sb(t_stack *b, int for_checker)
 {
 	ft_swap(b);
-	ft_printf("sb\n");
+	if (!for_checker)
+		ft_printf("sb\n");
 }
 
-void	ft_ss(t_stack *a, t_stack *b)
+void	ft_ss(t_stack *a, t_stack *b, int for_checker)
 {
 	ft_swap(a);
 	ft_swap(b);
-	ft_printf("ss\n");
+	if (!for_checker)
+		ft_printf("ss\n");
 }

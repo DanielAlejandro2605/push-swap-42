@@ -6,37 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:08:11 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 22:13:34 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/09 19:57:02 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_mini_sort(t_stack *a, t_stack *b)
-{
-	t_lstop	*operation_lst;
-	t_lstop	*to_do;
-	int		*max_3_values;
-
-	max_3_values = ft_first_step(a, b);
-	while (a->length > 3)
-	{
-		if (a->top == max_3_values[0]
-			|| a->top == max_3_values[1]
-			|| a->top == max_3_values[2])
-			ft_ra(a);
-		else
-		{
-			operation_lst = ft_create_list_operations(a, b);
-			to_do = ft_get_ops_to_do(operation_lst);
-			ft_do_ops(to_do, a, b);
-			ft_free_list_op(operation_lst);
-		}
-	}
-	ft_sort_3(a);
-	ft_send_to_stack_a(a, b);
-	ft_free_tab(max_3_values);
-}
 
 int	*ft_first_step(t_stack *a, t_stack *b)
 {
@@ -57,9 +31,9 @@ int	*ft_first_step(t_stack *a, t_stack *b)
 	{
 		if (a->top == max_3_values[0] || a->top == max_3_values[1]
 			|| a->top == max_3_values[2])
-			ft_ra(a);
+			ft_ra(a, 0);
 		else
-			ft_pb(a, b);
+			ft_pb(a, b, 0);
 	}
 	ft_free_tab(tab_sorted);
 	return (max_3_values);
@@ -90,19 +64,19 @@ void	ft_handle_biggest_index(int biggest_index, t_stack *s)
 {
 	if (biggest_index == 0)
 	{
-		ft_ra(s);
+		ft_ra(s, 0);
 		if (s->tab[0] > s->tab[1])
-			ft_sa(s);
+			ft_sa(s, 0);
 	}
 	else if (biggest_index == 1)
 	{
-		ft_rra(s);
+		ft_rra(s, 0);
 		if (s->tab[0] > s->tab[1])
-			ft_sa(s);
+			ft_sa(s, 0);
 	}
 	else if (biggest_index == 2)
 	{
 		if (s->tab[0] > s->tab[1])
-			ft_sa(s);
+			ft_sa(s, 0);
 	}
 }

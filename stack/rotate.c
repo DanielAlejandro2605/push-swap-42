@@ -31,21 +31,24 @@ void	ft_rotate(t_stack *s)
 	}
 }
 
-void	ft_ra(t_stack *a)
+void	ft_ra(t_stack *a, int for_checker)
 {
 	ft_rotate(a);
-	ft_printf("ra\n");
+	if (!for_checker)
+		ft_printf("ra\n");
 }
 
-void	ft_rb(t_stack *b)
+void	ft_rb(t_stack *b, int for_checker)
 {
 	ft_rotate(b);
-	ft_printf("rb\n");
+	if (!for_checker)
+		ft_printf("rb\n");
 }
 
-void	ft_rr(t_stack *a, t_stack *b)
+void	ft_rr(t_stack *a, t_stack *b, int for_checker)
 {
 	ft_rotate(a);
 	ft_rotate(b);
-	ft_printf("rr\n");
+	if (!for_checker)
+		ft_printf("rr\n");
 }

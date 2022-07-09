@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 19:09:43 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 22:18:39 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/09 19:47:24 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,24 @@ void	ft_reverse(t_stack *s)
 	}
 }
 
-void	ft_rra(t_stack *a)
+void	ft_rra(t_stack *a, int for_checker)
 {
 	ft_reverse(a);
-	ft_printf("rra\n");
+	if (!for_checker)
+		ft_printf("rra\n");
 }
 
-void	ft_rrb(t_stack *b)
+void	ft_rrb(t_stack *b, int for_checker)
 {
 	ft_reverse(b);
-	ft_printf("rrb\n");
+	if (!for_checker)
+		ft_printf("rrb\n");
 }
 
-void	ft_rrr(t_stack *a, t_stack *b)
+void	ft_rrr(t_stack *a, t_stack *b, int for_checker)
 {
 	ft_reverse(a);
 	ft_reverse(b);
-	ft_printf("rrr\n");
+	if (!for_checker)
+		ft_printf("rrr\n");
 }

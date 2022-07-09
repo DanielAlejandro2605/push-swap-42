@@ -19,7 +19,7 @@ void	ft_do_ra(t_stack *a, int number_ra)
 	i = 0;
 	while (i < number_ra)
 	{
-		ft_ra(a);
+		ft_ra(a, 0);
 		i++;
 	}
 }
@@ -31,7 +31,7 @@ void	ft_do_rb(t_stack *b, int number_rb)
 	i = 0;
 	while (i < number_rb)
 	{
-		ft_rb(b);
+		ft_rb(b, 0);
 		i++;
 	}
 }
@@ -43,7 +43,7 @@ void	ft_do_rra(t_stack *a, int number_rra)
 	i = 0;
 	while (i < number_rra)
 	{
-		ft_rra(a);
+		ft_rra(a, 0);
 		i++;
 	}
 }
@@ -55,7 +55,7 @@ void	ft_do_rrb(t_stack *b, int number_rrb)
 	i = 0;
 	while (i < number_rrb)
 	{
-		ft_rrb(b);
+		ft_rrb(b, 0);
 		i++;
 	}
 }
@@ -67,7 +67,7 @@ void	ft_do_rr(t_stack *a, t_stack *b, int number_rr)
 	i = 0;
 	while (i < number_rr)
 	{
-		ft_rr(a, b);
+		ft_rr(a, b, 0);
 		i++;
 	}
 }
