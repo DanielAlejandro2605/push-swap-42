@@ -12,22 +12,70 @@
 
 #include "../includes/push_swap.h"
 
+// static void	ft_print_stack_a(t_stack *s)
+// {
+// 	int     i;
+
+// 	i = 0;
+// 	printf("*******************\n");
+// 	printf("    DATA OF A\n");
+// 	printf("   top    : %d\n", s->top);
+// 	printf("   length : %d\n", s->length);
+// 	printf("*******************\n");
+// 	while (i < s->length)
+//     {
+//         printf("         %d\n", s->tab[i]);
+//         i++;
+//     }
+// 	printf("        ---\n");
+// 	printf("         a ");
+// 	printf("\n");
+// }
+
+// static void	ft_print_stack_b(t_stack *s)
+// {
+// 	int     i;
+
+// 	i = 0;
+// 	printf("*******************\n");
+// 	printf("    DATA OF B\n");
+// 	printf("   top    : %d\n", s->top);
+// 	printf("   length : %d\n", s->length);
+// 	printf("*******************\n");
+// 	// if(!s->tab)
+// 	// 	printf("No Inizializada");
+// 	while (i < s->length)
+//     {
+//         printf("         %d\n", s->tab[i]);
+//         i++;
+//     }
+// 	printf("        ---\n");
+// 	printf("         b ");
+// 	printf("\n");
+// }
+
 void	ft_sort(t_stack *a, t_stack *b)
 {
 	t_lstop	*operation_lst;
 	t_lstop	*to_do;
-	int		*max_3_values;
+	int		*max_5_values;
 
-	max_3_values = ft_first_step(a, b);
-	while (a->length > 3)
+	max_5_values = ft_first_step(a, b);
+	while (a->length > 5)
 	{
-		operation_lst = ft_create_list_operations(a, b, max_3_values);
+		operation_lst = ft_create_list_operations(a, b, max_5_values);
 		to_do = ft_get_ops_to_do(operation_lst);
 		ft_do_ops(to_do, a, b);
 		ft_free_list_op(operation_lst);
 	}
+	ft_sort_5(a, b);
 	ft_sort_3(a);
+	if (b->tab[0] < b->tab[1])
+		ft_sb(b, 0);
+	ft_pa(a, b, 0);
+	ft_pa(a, b, 0);
 	ft_send_to_stack_a(a, b);
+	ft_free_tab(max_5_values);
 }
 
 void	ft_send_to_stack_a(t_stack *a, t_stack *b)
@@ -74,7 +122,7 @@ t_lstop	*ft_get_ops_to_do(t_lstop *op_list)
 	return (to_do);
 }
 
-t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_3_values)
+t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_5_values)
 {
 	t_lstop	*operation_lst;
 	t_lstop	*aux;
@@ -86,9 +134,7 @@ t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_3_values)
 	i = 0;
 	while (i < a->length)
 	{
-		if ((a->tab[i] != max_3_values[0])
-			&& (a->tab[i] != max_3_values[1]
-				&& (a->tab[i] != max_3_values[2])))
+		if (!(ft_check_not_max_value(max_5_values, a->tab[i])))
 		{
 			list_instruction = ft_get_instructions_for_value(a, b, a->tab[i]);
 			aux = ft_new_element_lstop(a->tab[i], list_instruction);

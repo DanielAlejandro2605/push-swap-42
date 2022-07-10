@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:22:38 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/09 20:03:24 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/10 11:36:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ void	ft_push_swap(int *args_nums, int size_args_num)
 
 	a = ft_initialize_a(args_nums, size_args_num);
 	b = ft_initialize_b();
-	ft_sort(a, b);
+	if (a->length <= 3)
+		ft_sort_3(a);
+	else
+		ft_sort(a, b);
 	ft_free_stack(a);
 	ft_free_stack(b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/09 20:03:38 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/10 17:48:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ void	ft_push_swap(int *args_nums, int size_args_num);
 /*Functions to perform mini push swap
 File : mini_push_swap.c*/
 int		*ft_first_step(t_stack *a, t_stack *b);
+void	ft_sort_5(t_stack *a, t_stack *b);
 void	ft_sort_3(t_stack *s);
+int		ft_check_not_max_value(int *max_5_values, int value);
 void	ft_handle_biggest_index(int biggest_index, t_stack *s);
 /*Function to sort elements
 File : sort.c*/
