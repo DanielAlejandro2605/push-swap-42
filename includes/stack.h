@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:00:37 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/09 19:58:31 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/17 18:21:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "../libft/includes/libft.h"
+# include "../includes/utils.h"
 # define ERROR_MESSAGE "Error\n"
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648

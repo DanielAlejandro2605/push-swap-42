@@ -6,17 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/10 17:48:35 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/17 18:21:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdlib.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include "../libft/includes/libft.h"
+
 # include "../includes/stack.h"
 
 /*Structures of the project: */

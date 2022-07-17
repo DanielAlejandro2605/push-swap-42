@@ -13,12 +13,6 @@
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <stddef.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include "../libft/includes/libft.h"
 # include "../includes/stack.h"
 
 /*Function to check the arguments
