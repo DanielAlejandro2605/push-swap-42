@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arguments_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:28:06 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 22:14:20 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/17 19:16:18 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ long	ft_atoi_overflow(const char *str)
 		negative = -1;
 	else
 		negative = 1;
-	if (negative == -1 || str[i] == '+')
+	if (negative == -1)
 		i++;
 	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -62,7 +62,7 @@ long	ft_atoi_overflow(const char *str)
 
 int	ft_isvalid_char(int c)
 {
-	if ((c >= '0' && c <= '9') || (c == '+') || (c == '-'))
+	if ((c >= '0' && c <= '9') || (c == '-'))
 		return (1);
 	return (0);
 }
@@ -76,8 +76,12 @@ int	ft_arg_have_only_one_sign(char *arg)
 	sign = 0;
 	while (arg[i])
 	{
-		if (arg[i] == '+' || arg[i] == '-')
+		if (arg[i] == '-')
+		{
+			if (arg[i-1] >= '0' && arg[i-1] <= '9')		
+				return (0);
 			sign++;
+		}
 		if (sign > 1)
 			return (0);
 		i++;

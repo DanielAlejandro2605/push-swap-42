@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 23:34:54 by marvin            #+#    #+#             */
-/*   Updated: 2022/07/08 22:54:16 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/17 19:32:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 		if (args_nums)
 			ft_do_push_swap(args_nums, ft_count_args(args_split));
 		else
-			ft_printf(ERROR_MESSAGE);
+			write(2, "Error\n", 6);
 		ft_free_tab_split(args_split);
 	}
 	else if (argc > 1)
@@ -33,9 +33,7 @@ int	main(int argc, char *argv[])
 		if (args_nums)
 			ft_do_push_swap(args_nums, ft_count_args(argv + 1));
 		else
-			ft_printf(ERROR_MESSAGE);
+			write(2, "Error\n", 6);
 	}
-	else
-		ft_printf("\n");
 	return (0);
 }

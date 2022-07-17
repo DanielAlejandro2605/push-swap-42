@@ -26,19 +26,19 @@ SRCO_PS					=	$(SRCS_PS:.c=.o)
 SRCO_CHECKER			=	$(SRCS_CHECKER:.c=.o)
 SRCO_STACK				=	$(SRCS_STACK:.c=.o)
 SRCO_UTILS				=	$(SRCS_UTILS:.c=.o)	
-FLAG = -Wall -Wextra -Werror
+# FLAG = -Wall -Wextra -Werror
 INC = -I includes/
 
 all	:	$(NAME_P) $(NAME_C)
 
 $(NAME_P) : $(SRCO_PS) $(SRCO_STACK) $(SRCO_UTILS)
-	gcc -o $(NAME_P) $(SRCO_PS) $(SRCO_STACK) $(SRCO_UTILS)
+	cc -o $(NAME_P) $(SRCO_PS) $(SRCO_STACK) $(SRCO_UTILS)
 
 $(NAME_C) : $(SRCO_CHECKER) $(SRCO_STACK) $(SRCO_UTILS)
-	gcc -o $(NAME_C) $(SRCO_CHECKER) $(SRCO_STACK) $(SRCO_UTILS)
+	cc -o $(NAME_C) $(SRCO_CHECKER) $(SRCO_STACK) $(SRCO_UTILS)
 
 %.o : %.c
-	gcc $(FLAG) -c $< -o $@ $(INC)
+	cc $(FLAG) -c $< -o $@ $(INC)
 
 clean :
 	/bin/rm -f $(SRCO_PS)
