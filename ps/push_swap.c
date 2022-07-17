@@ -6,12 +6,53 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:22:38 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/10 11:36:02 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/17 22:00:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+static void	ft_print_stack_a(t_stack *s)
+{
+	int     i;
+
+	i = 0;
+	ft_printf("*******************\n");
+	ft_printf("    DATA OF A\n");
+	ft_printf("   top    : %d\n", s->top);
+	ft_printf("   length : %d\n", s->length);
+	ft_printf("*******************\n");
+	while (i < s->length)
+    {
+        ft_printf("         %d\n", s->tab[i]);
+        i++;
+    }
+	ft_printf("        ---\n");
+	ft_printf("         a ");
+	ft_printf("\n");
+}
+
+static void	ft_print_stack_b(t_stack *s)
+{
+	int     i;
+
+	i = 0;
+	ft_printf("*******************\n");
+	ft_printf("    DATA OF B\n");
+	ft_printf("   top    : %d\n", s->top);
+	ft_printf("   length : %d\n", s->length);
+	ft_printf("*******************\n");
+	// if(!s->tab)
+	// 	ft_printf("No Inizializada");
+	while (i < s->length)
+    {
+        ft_printf("         %d\n", s->tab[i]);
+        i++;
+    }
+	ft_printf("        ---\n");
+	ft_printf("         b ");
+	ft_printf("\n");
+}
 void	ft_do_push_swap(int *args, int amount_args)
 {
 	if (ft_args_is_already_sorted(args, amount_args))

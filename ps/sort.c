@@ -74,9 +74,8 @@ void	ft_sort(t_stack *a, t_stack *b)
 		ft_sb(b, 0);
 	ft_pa(a, b, 0);
 	ft_pa(a, b, 0);
-	ft_send_to_stack_a(a, b);
-	// ft_print_stack_a(a);
-	// ft_print_stack_b(b);
+	if (b->length > 0)
+		ft_send_to_stack_a(a, b);
 	ft_free_tab(max_5_values);
 }
 
