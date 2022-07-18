@@ -12,48 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-static void	ft_print_stack_a(t_stack *s)
-{
-	int     i;
-
-	i = 0;
-	ft_printf("*******************\n");
-	ft_printf("    DATA OF A\n");
-	ft_printf("   top    : %d\n", s->top);
-	ft_printf("   length : %d\n", s->length);
-	ft_printf("*******************\n");
-	while (i < s->length)
-    {
-        ft_printf("         %d\n", s->tab[i]);
-        i++;
-    }
-	ft_printf("        ---\n");
-	ft_printf("         a ");
-	ft_printf("\n");
-}
-
-static void	ft_print_stack_b(t_stack *s)
-{
-	int     i;
-
-	i = 0;
-	ft_printf("*******************\n");
-	ft_printf("    DATA OF B\n");
-	ft_printf("   top    : %d\n", s->top);
-	ft_printf("   length : %d\n", s->length);
-	ft_printf("*******************\n");
-	// if(!s->tab)
-	// 	ft_printf("No Inizializada");
-	while (i < s->length)
-    {
-        ft_printf("         %d\n", s->tab[i]);
-        i++;
-    }
-	ft_printf("        ---\n");
-	ft_printf("         b ");
-	ft_printf("\n");
-}
-
 void	ft_sort(t_stack *a, t_stack *b)
 {
 	t_lstop	*operation_lst;
@@ -73,7 +31,8 @@ void	ft_sort(t_stack *a, t_stack *b)
 	if (b->tab[0] < b->tab[1])
 		ft_sb(b, 0);
 	ft_pa(a, b, 0);
-	ft_pa(a, b, 0);
+	if (b->length >= 1)
+		ft_pa(a, b, 0);
 	if (b->length > 0)
 		ft_send_to_stack_a(a, b);
 	ft_free_tab(max_5_values);
