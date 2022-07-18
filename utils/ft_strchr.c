@@ -22,12 +22,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)s);
 }
-
-/*int main (void)
-{
-    char str[10] = "Daniel";
-	// char s[] = "tripouille";
-    char *occurence = ft_strchr(str, 'D' + 256);
-    printf("%s\n", occurence);
-    return (0);
-}*/

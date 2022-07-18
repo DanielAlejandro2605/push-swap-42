@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arguments_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:28:06 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/17 21:40:46 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:18:44 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ft_arg_have_only_one_sign(char *arg)
 	{
 		if (arg[i] == '-')
 		{
-			if (arg[i-1] >= '0' && arg[i-1] <= '9')		
+			if (arg[i - 1] >= '0' && arg[i - 1] <= '9')
 				return (0);
 			sign++;
 		}

@@ -26,21 +26,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(p, total_size);
 	return (p);
 }
-
-/*int main() 
-{
-        int i, * ptr, sum = 0;
-        ptr = ft_calloc(0, sizeof(int));
-        if (ptr == NULL) {
-            printf("Error! memory not allocated.\n");
-            exit(0);
-        }
-        printf("Building and calculating the sequence sum 
-		of the first 10 terms\n");
-        for (i = 0; i < 10; ++i) { * (ptr + i) = i;
-            sum += * (ptr + i);
-        }
-        printf("Sum = %d\n", sum);
-        free(ptr);
-        return 0;
-}*/

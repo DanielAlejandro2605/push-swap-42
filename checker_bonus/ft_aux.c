@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:10:21 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/08 23:19:27 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/18 15:23:38 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	ft_printf(ERROR_MESSAGE);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 

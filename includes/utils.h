@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 15:19:21 by dnieto-c          #+#    #+#             */
+/*   Updated: 2022/07/18 15:19:21 by dnieto-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef UTILS_H
 # define UTILS_H
 
@@ -7,14 +19,15 @@
 # include <stdarg.h>
 # include <fcntl.h>
 # define BUFFER_SIZE 10
-int	ft_atoi(const char *str);
+
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	**ft_split(char const *str, char c);
 char	*ft_strchr(const char *s, int c);
-int	ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 char	*ft_strjoin_secure(char *s1, char *s2);
-int	ft_strlen_int(char *s);
+int		ft_strlen_int(char *s);
 /*
 All prototypes functions of ft_printf project.
 Directory : ft_printf

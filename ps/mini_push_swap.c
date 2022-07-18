@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:08:11 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/17 21:33:21 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:18:58 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	ft_handle_biggest_index(int biggest_index, t_stack *s)
 	}
 }
 
-int		ft_check_not_max_value(int *max_5_values, int value)
+int	ft_check_not_max_value(int *max_5_values, int value)
 {
 	if (value == max_5_values[0]
 		|| value == max_5_values[1]

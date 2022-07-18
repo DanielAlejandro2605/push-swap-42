@@ -32,7 +32,7 @@ void	ft_checker(char **argv)
 		ft_free_stack(b);
 	}
 	else
-		ft_printf(ERROR_MESSAGE);
+		ft_error();
 }
 
 void	ft_exec_list_instructions(t_stack *a, t_stack *b)
