@@ -22,8 +22,11 @@ int	ft_is_valid_format_args(char **args)
 	{
 		if (ft_strlen_int(args[i]) == 0 || ft_strlen_int(args[i]) > 11)
 			return (0);
-		if (!(ft_arg_have_only_one_sign(args[i])))
-			return (0);
+		if (ft_strlen_int(args[i]) > 2)
+		{
+			if (!(ft_arg_have_only_one_sign(args[i])))
+				return (0);
+		}
 		j = 0;
 		while (args[i][j])
 		{
@@ -47,6 +50,12 @@ int	ft_is_valid_range(char **args)
 	i = 0;
 	while (args[i] && i < size_args)
 	{
+		if (ft_strcmp(args[i], "-") == 0 || ft_strcmp(args[i], "0-") == 0
+			|| ft_strcmp(args[i], "-0") == 0)
+		{
+			free(array_args);
+			return (0);
+		}
 		array_args[i] = ft_atoi_overflow(args[i]);
 		if (array_args[i] < MIN_INT || array_args[i] > MAX_INT)
 		{

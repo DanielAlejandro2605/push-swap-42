@@ -6,11 +6,11 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:28:06 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/18 15:18:44 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/22 21:19:35 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 int	ft_check_doubles(int *array, int size_array)
 {
@@ -78,7 +78,7 @@ int	ft_arg_have_only_one_sign(char *arg)
 	{
 		if (arg[i] == '-')
 		{
-			if (arg[i - 1] >= '0' && arg[i - 1] <= '9')
+			if (i > 0 && arg[i - 1] >= '0' && arg[i - 1] <= '9')
 				return (0);
 			sign++;
 		}

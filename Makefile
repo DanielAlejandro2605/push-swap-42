@@ -25,8 +25,9 @@ SRCS_UTILS				=	$(addprefix $(SRCS_UTILS_DIR)/, $(_SRCS_UTILS))
 SRCO_PS					=	$(SRCS_PS:.c=.o)
 SRCO_CHECKER			=	$(SRCS_CHECKER:.c=.o)
 SRCO_STACK				=	$(SRCS_STACK:.c=.o)
-SRCO_UTILS				=	$(SRCS_UTILS:.c=.o)	
-# FLAG = -Wall -Wextra -Werror
+SRCO_UTILS				=	$(SRCS_UTILS:.c=.o)
+
+FLAG = -Wall -Wextra -Werror
 INC = -I includes/
 
 all	:	$(NAME_P) $(NAME_C)

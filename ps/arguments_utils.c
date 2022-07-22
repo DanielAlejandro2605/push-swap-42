@@ -6,7 +6,7 @@
 /*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:28:06 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/18 15:19:08 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/22 21:14:17 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ft_arg_have_only_one_sign(char *arg)
 	{
 		if (arg[i] == '-')
 		{
-			if (arg[i - 1] >= '0' && arg[i - 1] <= '9')
+			if (i > 0 && arg[i - 1] >= '0' && arg[i - 1] <= '9')
 				return (0);
 			sign++;
 		}
