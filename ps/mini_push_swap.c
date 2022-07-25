@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:08:11 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/18 15:18:58 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/25 09:56:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ int	*ft_first_step(t_stack *a, t_stack *b)
 	int		temp;
 
 	tab_sorted = ft_get_tab_sorted(a);
+	if (!tab_sorted)
+		return (NULL);
 	max_5_values = (int *)malloc(sizeof(int) * (5));
 	if (!max_5_values)
 		return (NULL);
-	temp = a->length - 5;
+	if (a->length == 4)
+		temp = a->length - 4;
+	else
+		temp = a->length - 5;
 	i = 0;
 	while (temp < a->length)
 		max_5_values[i++] = tab_sorted[temp++];
@@ -38,7 +43,22 @@ int	*ft_first_step(t_stack *a, t_stack *b)
 	return (max_5_values);
 }
 
-void	ft_sort_5(t_stack *a, t_stack *b)
+int	ft_sort_4(t_stack *a, t_stack *b)
+{
+	int		*tab_sorted;
+
+	tab_sorted = ft_get_tab_sorted(a);
+	if (!tab_sorted)
+		return (1);
+	while (a->top != tab_sorted[0])
+		ft_ra(a, 0);
+	ft_pb(a, b, 0);
+	ft_sort_3(a);
+	ft_pa(a, b, 0);
+	return (0);
+}
+
+int	ft_sort_5(t_stack *a, t_stack *b)
 {
 	int		*max_3_values;
 	int		*tab_sorted;
@@ -46,9 +66,11 @@ void	ft_sort_5(t_stack *a, t_stack *b)
 	int		temp;
 
 	tab_sorted = ft_get_tab_sorted(a);
+	if (!tab_sorted)
+		return (1);
 	max_3_values = (int *)malloc(sizeof(int) * (3));
 	if (!max_3_values)
-		return ;
+		return (1);
 	temp = a->length - 3;
 	i = 0;
 	while (temp < a->length)
@@ -64,6 +86,7 @@ void	ft_sort_5(t_stack *a, t_stack *b)
 	}
 	ft_free_tab(tab_sorted);
 	ft_free_tab(max_3_values);
+	return(0);
 }
 
 void	ft_sort_3(t_stack *s)

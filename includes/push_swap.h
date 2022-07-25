@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/17 18:21:29 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/25 10:00:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,19 @@ int		ft_arg_have_only_one_sign(char *arg);
 File : push_swap.c*/
 void	ft_do_push_swap(int *args, int amount_args);
 int		ft_args_is_already_sorted(int *args, int amount_args);
-void	ft_push_swap(int *args_nums, int size_args_num);
+int		ft_push_swap(int *args_nums, int size_args_num);
 /*Functions to perform mini push swap
 File : mini_push_swap.c*/
 int		*ft_first_step(t_stack *a, t_stack *b);
-void	ft_sort_5(t_stack *a, t_stack *b);
+int		ft_sort_5(t_stack *a, t_stack *b);
+int		ft_sort_4(t_stack *a, t_stack *b);
 void	ft_sort_3(t_stack *s);
 int		ft_check_not_max_value(int *max_5_values, int value);
 void	ft_handle_biggest_index(int biggest_index, t_stack *s);
 /*Function to sort elements
 File : sort.c*/
-void	ft_sort(t_stack *a, t_stack *b);
+int		ft_begin_sort(t_stack *a, t_stack *b);
+int		ft_sort(t_stack *a, t_stack *b);
 void	ft_send_to_stack_a(t_stack *a, t_stack *b);
 void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b);
 t_lstop	*ft_get_ops_to_do(t_lstop *op_list);
@@ -116,6 +118,6 @@ Functions to free the memory
 File: free.c
 */
 void	ft_free_list_op(t_lstop *op_list);
-void	ft_free_inst_list(t_lsti *list);
+void	*ft_free_inst_list(t_lsti *list);
 void	ft_free_tab_split(char **tab);
 #endif

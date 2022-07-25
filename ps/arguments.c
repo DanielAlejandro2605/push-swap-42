@@ -47,6 +47,8 @@ int	ft_is_valid_range(char **args)
 
 	size_args = ft_count_args(args);
 	array_args = (long int *)malloc(sizeof(long int) * (size_args));
+	if (!array_args)
+		return (0);
 	i = 0;
 	while (args[i] && i < size_args)
 	{
@@ -78,6 +80,8 @@ int	*ft_check_arguments(char **args)
 	{
 		size_args = ft_count_args(args);
 		args_nums = (int *)malloc(sizeof(int) * (size_args));
+		if (!args_nums)
+			return (0);
 		i = 0;
 		while (args[i] && i < size_args)
 		{
@@ -98,10 +102,17 @@ int	*ft_check_arguments(char **args)
 int	*ft_check_only_one_args(char *one_arg)
 {
 	char	**args_split;
+	int		*args_nums;
 
 	args_split = ft_split(one_arg, ' ');
 	if (ft_is_valid_format_args(args_split) && ft_is_valid_range(args_split))
-		return (ft_args_nums_atoi(args_split));
+	{
+		args_nums = ft_args_nums_atoi(args_split);
+		if (!args_nums)
+			return (NULL);
+		else
+			return(args_nums);
+	}
 	else
 	{
 		ft_free_tab_split(args_split);
@@ -117,6 +128,8 @@ int	*ft_args_nums_atoi(char **args_split)
 
 	size_args = ft_count_args(args_split);
 	args_nums = (int *)malloc(sizeof(int) * (size_args));
+	if (!args_nums)
+		return (NULL);
 	i = 0;
 	while (args_split[i] && i < size_args)
 	{

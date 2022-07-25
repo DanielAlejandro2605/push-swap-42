@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:40:12 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/09 19:51:25 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/25 09:45:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	*ft_get_tab_sorted(t_stack *a)
 	int		i;
 
 	tab_sorted = ft_get_tab_from_stack(a, a->length);
+	if (!tab_sorted)
+		return (NULL);
 	i = -1;
 	while (++i < (a->length - 1))
 	{

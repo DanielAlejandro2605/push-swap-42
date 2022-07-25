@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:16:33 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/09 19:44:34 by dnieto-c         ###   ########.fr       */
+/*   Updated: 2022/07/25 10:02:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_push(t_stack *s1, t_stack *s2)
 	}
 }
 
-void	ft_update_from_push(t_stack *s)
+int	ft_update_from_push(t_stack *s)
 {
 	int		*new_tab;
 	int		i;
@@ -51,9 +51,10 @@ void	ft_update_from_push(t_stack *s)
 		s->tab = 0;
 		return ;
 	}
-	new_tab = (int *)malloc(sizeof(int) * (s->length - 1));
+	// new_tab = (int *)malloc(sizeof(int) * (s->length - 1));
+	new_tab = 0;
 	if (!new_tab)
-		return ;
+		return (1);
 	i = 1;
 	while (i < s->length)
 	{
@@ -64,6 +65,7 @@ void	ft_update_from_push(t_stack *s)
 	s->tab = new_tab;
 	s->top = s->tab[0];
 	s->length = s->length - 1;
+	return (0);
 }
 
 void	ft_update_to_push(t_stack *s, int value)

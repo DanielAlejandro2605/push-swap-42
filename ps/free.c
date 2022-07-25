@@ -25,10 +25,11 @@ void	ft_free_list_op(t_lstop *op_list)
 	}
 }
 
-void	ft_free_inst_list(t_lsti *list)
+void	*ft_free_inst_list(t_lsti *list)
 {
 	free(list);
 	list = NULL;
+	return (NULL);
 }
 
 void	ft_free_tab_split(char **tab)

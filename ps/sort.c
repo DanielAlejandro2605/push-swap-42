@@ -12,21 +12,38 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_sort(t_stack *a, t_stack *b)
+int	ft_begin_sort(t_stack *a, t_stack *b)
 {
 	t_lstop	*operation_lst;
 	t_lstop	*to_do;
 	int		*max_5_values;
 
 	max_5_values = ft_first_step(a, b);
+	if (!max_5_values)
+		return (1);
 	while (a->length > 5)
 	{
 		operation_lst = ft_create_list_operations(a, b, max_5_values);
+		if (!operation_lst)
+		{
+			ft_free_tab(max_5_values);
+			ft_free_list_op(operation_lst);
+			return (1);
+		}
 		to_do = ft_get_ops_to_do(operation_lst);
 		ft_do_ops(to_do, a, b);
 		ft_free_list_op(operation_lst);
 	}
-	ft_sort_5(a, b);
+	ft_free_tab(max_5_values);
+	if (ft_sort(a, b))
+		return (1);
+	return (0);
+}
+
+int	ft_sort(t_stack *a, t_stack *b)
+{
+	if (ft_sort_5(a, b))
+		return (1);
 	ft_sort_3(a);
 	if (b->tab[0] < b->tab[1])
 		ft_sb(b, 0);
@@ -35,7 +52,7 @@ void	ft_sort(t_stack *a, t_stack *b)
 		ft_pa(a, b, 0);
 	if (b->length > 0)
 		ft_send_to_stack_a(a, b);
-	ft_free_tab(max_5_values);
+	return (0);
 }
 
 void	ft_send_to_stack_a(t_stack *a, t_stack *b)
@@ -97,7 +114,11 @@ t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_5_values)
 		if (!(ft_check_not_max_value(max_5_values, a->tab[i])))
 		{
 			list_instruction = ft_get_instructions_for_value(a, b, a->tab[i]);
+			if (!list_instruction)
+				return (NULL);
 			aux = ft_new_element_lstop(a->tab[i], list_instruction);
+			if (!aux)
+				return (ft_free_inst_list(list_instruction));
 			ft_add_inst_to_lst_op(&operation_lst, aux);
 		}
 		i++;

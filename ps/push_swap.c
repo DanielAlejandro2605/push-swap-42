@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:22:38 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/18 09:55:20 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/25 09:29:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	ft_do_push_swap(int *args, int amount_args)
 		return ;
 	}
 	else
-		ft_push_swap(args, amount_args);
+	{
+		if(ft_push_swap(args, amount_args))
+			write(2, "Error\n", 6);
+	}
 }
 
 int	ft_args_is_already_sorted(int *args, int amount_args)
@@ -37,17 +40,28 @@ int	ft_args_is_already_sorted(int *args, int amount_args)
 	return (1);
 }
 
-void	ft_push_swap(int *args_nums, int size_args_num)
+int	ft_push_swap(int *args_nums, int size_args_num)
 {
 	t_stack	*a;
 	t_stack	*b;
 
 	a = ft_initialize_a(args_nums, size_args_num);
 	b = ft_initialize_b();
+	if (!a || !b)
+		return (1);
 	if (a->length <= 3)
 		ft_sort_3(a);
+	else if(a->length == 4)
+	{
+		if(ft_sort_4(a, b))
+			write(2, "Error\n", 6);
+	}
 	else
-		ft_sort(a, b);
+	{
+		if(ft_begin_sort(a, b))
+			write(2, "Error\n", 6);
+	}
 	ft_free_stack(a);
 	ft_free_stack(b);
+	return(0);
 }

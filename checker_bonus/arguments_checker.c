@@ -78,6 +78,8 @@ int	*ft_check_arguments(char **args)
 	{
 		size_args = ft_count_args(args);
 		args_nums = (int *)malloc(sizeof(int) * (size_args));
+		if (!args_nums)
+			return (NULL);
 		i = 0;
 		while (args[i] && i < size_args)
 		{
