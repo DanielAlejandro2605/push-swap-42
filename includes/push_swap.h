@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:31:34 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/25 10:00:03 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/28 23:07:56 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ long	ft_atoi_overflow(const char *str);
 int		ft_isvalid_char(int c);
 int		ft_count_args(char **args);
 int		ft_arg_have_only_one_sign(char *arg);
+int		ft_parsing_zero_arg(char *arg);
+/*Function for handle errors*/
+void	*ft_error_split(char **args_split);
+void	*ft_error_tab(int *args_nums);
+int		ft_error_int_limit(long int *args_nums);
+int		ft_error_op_list(t_lstop *operation_lst, int *max_5_values);
 /*Main functions
 File : push_swap.c*/
 void	ft_do_push_swap(int *args, int amount_args);
@@ -59,14 +65,18 @@ int		*ft_first_step(t_stack *a, t_stack *b);
 int		ft_sort_5(t_stack *a, t_stack *b);
 int		ft_sort_4(t_stack *a, t_stack *b);
 void	ft_sort_3(t_stack *s);
-int		ft_check_not_max_value(int *max_5_values, int value);
+/*Function utils for the mini push swap
+File : mini_ps_utils.c*/
+int		*ft_get_max_values_first_step(t_stack *a);
+int		*ft_get_max_values_sort_5(t_stack *a);
 void	ft_handle_biggest_index(int biggest_index, t_stack *s);
+int		ft_check_not_max_value(int *max_5_values, int value);
 /*Function to sort elements
 File : sort.c*/
 int		ft_begin_sort(t_stack *a, t_stack *b);
 int		ft_sort(t_stack *a, t_stack *b);
-void	ft_send_to_stack_a(t_stack *a, t_stack *b);
-void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b);
+int		ft_send_to_stack_a(t_stack *a, t_stack *b);
+int		ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b);
 t_lstop	*ft_get_ops_to_do(t_lstop *op_list);
 t_lstop	*ft_create_list_operations(t_stack *a, t_stack *b, int *max_3_values);
 /*Utils functions to sort the elements:

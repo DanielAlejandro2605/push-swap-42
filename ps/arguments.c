@@ -12,6 +12,35 @@
 
 #include "../includes/push_swap.h"
 
+int	*ft_check_arguments(char **args)
+{
+	int	*args_nums;
+	int	size_args;
+	int	i;
+
+	if (ft_is_valid_format_args(args) && ft_is_valid_range(args))
+	{
+		size_args = ft_count_args(args);
+		args_nums = (int *)malloc(sizeof(int) * (size_args));
+		if (args_nums)
+		{
+			i = 0;
+			while (args[i] && i < size_args)
+			{
+				args_nums[i] = ft_atoi(args[i]);
+				i++;
+			}
+			if (ft_check_doubles(args_nums, size_args))
+				return (args_nums);
+			else
+				ft_error_tab(args_nums);
+		}
+		else
+			return (NULL);
+	}
+	return (NULL);
+}
+
 int	ft_is_valid_format_args(char **args)
 {
 	int			i;
@@ -47,56 +76,22 @@ int	ft_is_valid_range(char **args)
 
 	size_args = ft_count_args(args);
 	array_args = (long int *)malloc(sizeof(long int) * (size_args));
-	if (!array_args)
-		return (0);
-	i = 0;
-	while (args[i] && i < size_args)
+	if (array_args)
 	{
-		if (ft_strcmp(args[i], "-") == 0 || ft_strcmp(args[i], "0-") == 0
-			|| ft_strcmp(args[i], "-0") == 0)
-		{
-			free(array_args);
-			return (0);
-		}
-		array_args[i] = ft_atoi_overflow(args[i]);
-		if (array_args[i] < MIN_INT || array_args[i] > MAX_INT)
-		{
-			free(array_args);
-			return (0);
-		}
-		i++;
-	}
-	free(array_args);
-	return (1);
-}
-
-int	*ft_check_arguments(char **args)
-{
-	int	*args_nums;
-	int	size_args;
-	int	i;
-
-	if (ft_is_valid_format_args(args) && ft_is_valid_range(args))
-	{
-		size_args = ft_count_args(args);
-		args_nums = (int *)malloc(sizeof(int) * (size_args));
-		if (!args_nums)
-			return (0);
 		i = 0;
 		while (args[i] && i < size_args)
 		{
-			args_nums[i] = ft_atoi(args[i]);
+			if (ft_parsing_zero_arg(args[i]))
+				return (ft_error_int_limit(array_args));
+			array_args[i] = ft_atoi_overflow(args[i]);
+			if (array_args[i] < MIN_INT || array_args[i] > MAX_INT)
+				return (ft_error_int_limit(array_args));
 			i++;
 		}
-		if (ft_check_doubles(args_nums, size_args))
-			return (args_nums);
-		else
-		{
-			free(args_nums);
-			return (NULL);
-		}
+		free(array_args);
+		return (1);
 	}
-	return (NULL);
+	return (0);
 }
 
 int	*ft_check_only_one_args(char *one_arg)
@@ -105,19 +100,22 @@ int	*ft_check_only_one_args(char *one_arg)
 	int		*args_nums;
 
 	args_split = ft_split(one_arg, ' ');
-	if (ft_is_valid_format_args(args_split) && ft_is_valid_range(args_split))
+	if (args_split)
 	{
-		args_nums = ft_args_nums_atoi(args_split);
-		if (!args_nums)
-			return (NULL);
+		if (ft_is_valid_format_args(args_split)
+			&& ft_is_valid_range(args_split))
+		{
+			args_nums = ft_args_nums_atoi(args_split);
+			if (args_nums)
+				return (args_nums);
+			else
+				return (ft_error_split(args_split));
+		}
 		else
-			return(args_nums);
+			return (ft_error_split(args_split));
 	}
 	else
-	{
-		ft_free_tab_split(args_split);
 		return (NULL);
-	}
 }
 
 int	*ft_args_nums_atoi(char **args_split)
@@ -128,20 +126,22 @@ int	*ft_args_nums_atoi(char **args_split)
 
 	size_args = ft_count_args(args_split);
 	args_nums = (int *)malloc(sizeof(int) * (size_args));
-	if (!args_nums)
-		return (NULL);
-	i = 0;
-	while (args_split[i] && i < size_args)
+	if (args_nums)
 	{
-		args_nums[i] = ft_atoi(args_split[i]);
-		i++;
+		i = 0;
+		while (args_split[i] && i < size_args)
+		{
+			args_nums[i] = ft_atoi(args_split[i]);
+			i++;
+		}
+		ft_free_tab_split(args_split);
+		if (ft_check_doubles(args_nums, size_args))
+			return (args_nums);
+		else
+		{
+			free(args_nums);
+			return (NULL);
+		}
 	}
-	ft_free_tab_split(args_split);
-	if (ft_check_doubles(args_nums, size_args))
-		return (args_nums);
-	else
-	{
-		free(args_nums);
-		return (NULL);
-	}
+	return (NULL);
 }

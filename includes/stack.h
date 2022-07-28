@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:00:37 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/17 18:21:14 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/28 22:16:43 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void	ft_ss(t_stack *a, t_stack *b, int for_checker);
 Functions to push
 File : push.c
 */
-void	ft_pa(t_stack *a, t_stack *b, int for_checker);
-void	ft_pb(t_stack *a, t_stack *b, int for_checker);
-void	ft_push(t_stack *s1, t_stack *s2);
-void	ft_update_from_push(t_stack *s);
-void	ft_update_to_push(t_stack *s, int value);
+int		ft_pa(t_stack *a, t_stack *b, int for_checker);
+int		ft_pb(t_stack *a, t_stack *b, int for_checker);
+int		ft_push(t_stack *s1, t_stack *s2);
+int		ft_update_from_push(t_stack *s);
+int		ft_update_to_push(t_stack *s, int value);
 /*
 Functions to rotate
 File : rotate.c
@@ -65,7 +65,8 @@ void	ft_rrr(t_stack *a, t_stack *b, int for_checker);
 Functions for free
 File : free.c
 */
-void	ft_free_stack(t_stack *s);
+void	ft_free_stacks(t_stack *a, t_stack *b);
+int		ft_free_stack(t_stack *s);
 void	ft_free_tab(int *tab);
 void	ft_free_tab_and_assign(int *tab, t_stack *s);
 void	ft_create_tab_for_first_push(t_stack *s, int *tab, int value);

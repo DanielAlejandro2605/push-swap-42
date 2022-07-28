@@ -25,13 +25,10 @@ int	ft_begin_sort(t_stack *a, t_stack *b)
 	{
 		operation_lst = ft_create_list_operations(a, b, max_5_values);
 		if (!operation_lst)
-		{
-			ft_free_tab(max_5_values);
-			ft_free_list_op(operation_lst);
-			return (1);
-		}
+			return (ft_error_op_list(operation_lst, max_5_values));
 		to_do = ft_get_ops_to_do(operation_lst);
-		ft_do_ops(to_do, a, b);
+		if (ft_do_ops(to_do, a, b))
+			return (ft_error_op_list(operation_lst, max_5_values));
 		ft_free_list_op(operation_lst);
 	}
 	ft_free_tab(max_5_values);
@@ -47,15 +44,18 @@ int	ft_sort(t_stack *a, t_stack *b)
 	ft_sort_3(a);
 	if (b->tab[0] < b->tab[1])
 		ft_sb(b, 0);
-	ft_pa(a, b, 0);
+	if (ft_pa(a, b, 0))
+		return (1);
 	if (b->length >= 1)
-		ft_pa(a, b, 0);
+		if (ft_pa(a, b, 0))
+			return (1);
 	if (b->length > 0)
-		ft_send_to_stack_a(a, b);
+		if (ft_send_to_stack_a(a, b))
+			return (1);
 	return (0);
 }
 
-void	ft_send_to_stack_a(t_stack *a, t_stack *b)
+int	ft_send_to_stack_a(t_stack *a, t_stack *b)
 {
 	int		biggest_b;
 	int		better_case_biggest_b;
@@ -69,18 +69,9 @@ void	ft_send_to_stack_a(t_stack *a, t_stack *b)
 		while (b->top != biggest_b)
 			ft_rrb(b, 0);
 	while (b->length > 0)
-		ft_pa(a, b, 0);
-}
-
-void	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b)
-{
-	ft_do_ra(a, op_list->list_inst->amt_ra);
-	ft_do_rra(a, op_list->list_inst->amt_rra);
-	ft_do_rb(b, op_list->list_inst->amt_rb);
-	ft_do_rrb(b, op_list->list_inst->amt_rrb);
-	ft_do_rr(a, b, op_list->list_inst->amt_rr);
-	ft_do_rrr(a, b, op_list->list_inst->amt_rrr);
-	ft_pb(a, b, 0);
+		if (ft_pa(a, b, 0))
+			return (1);
+	return (0);
 }
 
 t_lstop	*ft_get_ops_to_do(t_lstop *op_list)

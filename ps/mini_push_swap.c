@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:08:11 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/25 09:56:11 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/28 23:02:33 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,54 @@
 int	*ft_first_step(t_stack *a, t_stack *b)
 {
 	int		*max_5_values;
-	int		*tab_sorted;
-	int		i;
-	int		temp;
 
-	tab_sorted = ft_get_tab_sorted(a);
-	if (!tab_sorted)
-		return (NULL);
-	max_5_values = (int *)malloc(sizeof(int) * (5));
-	if (!max_5_values)
-		return (NULL);
-	if (a->length == 4)
-		temp = a->length - 4;
-	else
-		temp = a->length - 5;
-	i = 0;
-	while (temp < a->length)
-		max_5_values[i++] = tab_sorted[temp++];
-	while (b->length < 2 && a->length > 5)
+	max_5_values = ft_get_max_values_first_step(a);
+	if (max_5_values)
 	{
-		if (ft_check_not_max_value(max_5_values, a->top))
-			ft_ra(a, 0);
-		else
-			ft_pb(a, b, 0);
+		while (b->length < 2 && a->length > 5)
+		{
+			if (ft_check_not_max_value(max_5_values, a->top))
+				ft_ra(a, 0);
+			else
+			{
+				if (ft_pb(a, b, 0))
+				{
+					free(max_5_values);
+					return (NULL);
+				}	
+			}
+		}
+		return (max_5_values);
 	}
-	ft_free_tab(tab_sorted);
-	return (max_5_values);
+	return (NULL);
+}
+
+int	ft_sort_5(t_stack *a, t_stack *b)
+{
+	int		*max_3_values;
+
+	max_3_values = ft_get_max_values_sort_5(a);
+	if (max_3_values)
+	{
+		while (a->length > 3)
+		{
+			if (a->top == max_3_values[0]
+				|| a->top == max_3_values[1]
+				|| a->top == max_3_values[2])
+				ft_ra(a, 0);
+			else
+			{
+				if (ft_pb(a, b, 0))
+				{
+					ft_free_tab(max_3_values);
+					return (1);
+				}	
+			}
+		}
+		ft_free_tab(max_3_values);
+		return (0);
+	}
+	return (1);
 }
 
 int	ft_sort_4(t_stack *a, t_stack *b)
@@ -52,41 +74,13 @@ int	ft_sort_4(t_stack *a, t_stack *b)
 		return (1);
 	while (a->top != tab_sorted[0])
 		ft_ra(a, 0);
-	ft_pb(a, b, 0);
+	free(tab_sorted);
+	if (ft_pb(a, b, 0))
+		return (1);
 	ft_sort_3(a);
-	ft_pa(a, b, 0);
+	if (ft_pa(a, b, 0))
+		return (1);
 	return (0);
-}
-
-int	ft_sort_5(t_stack *a, t_stack *b)
-{
-	int		*max_3_values;
-	int		*tab_sorted;
-	int		i;
-	int		temp;
-
-	tab_sorted = ft_get_tab_sorted(a);
-	if (!tab_sorted)
-		return (1);
-	max_3_values = (int *)malloc(sizeof(int) * (3));
-	if (!max_3_values)
-		return (1);
-	temp = a->length - 3;
-	i = 0;
-	while (temp < a->length)
-		max_3_values[i++] = tab_sorted[temp++];
-	while (a->length > 3)
-	{
-		if (a->top == max_3_values[0]
-			|| a->top == max_3_values[1]
-			|| a->top == max_3_values[2])
-			ft_ra(a, 0);
-		else
-			ft_pb(a, b, 0);
-	}
-	ft_free_tab(tab_sorted);
-	ft_free_tab(max_3_values);
-	return(0);
 }
 
 void	ft_sort_3(t_stack *s)
@@ -108,36 +102,4 @@ void	ft_sort_3(t_stack *s)
 		i++;
 	}
 	ft_handle_biggest_index(biggest_index, s);
-}
-
-void	ft_handle_biggest_index(int biggest_index, t_stack *s)
-{
-	if (biggest_index == 0)
-	{
-		ft_ra(s, 0);
-		if (s->tab[0] > s->tab[1])
-			ft_sa(s, 0);
-	}
-	else if (biggest_index == 1)
-	{
-		ft_rra(s, 0);
-		if (s->tab[0] > s->tab[1])
-			ft_sa(s, 0);
-	}
-	else if (biggest_index == 2)
-	{
-		if (s->tab[0] > s->tab[1])
-			ft_sa(s, 0);
-	}
-}
-
-int	ft_check_not_max_value(int *max_5_values, int value)
-{
-	if (value == max_5_values[0]
-		|| value == max_5_values[1]
-		|| value == max_5_values[2]
-		|| value == max_5_values[3]
-		|| value == max_5_values[4])
-		return (1);
-	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dnieto-c <dnieto-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:40:12 by dnieto-c          #+#    #+#             */
-/*   Updated: 2022/07/25 09:45:05 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/28 23:05:19 by dnieto-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,19 @@ int	*ft_get_tab_from_stack(t_stack *a, int size)
 		i++;
 	}
 	return (tab);
+}
+
+int	ft_do_ops(t_lstop *op_list, t_stack *a, t_stack *b)
+{
+	ft_do_ra(a, op_list->list_inst->amt_ra);
+	ft_do_rra(a, op_list->list_inst->amt_rra);
+	ft_do_rb(b, op_list->list_inst->amt_rb);
+	ft_do_rrb(b, op_list->list_inst->amt_rrb);
+	ft_do_rr(a, b, op_list->list_inst->amt_rr);
+	ft_do_rrr(a, b, op_list->list_inst->amt_rrr);
+	if (ft_pb(a, b, 0))
+		return (1);
+	return (0);
 }
 
 void	ft_do_rrr(t_stack *a, t_stack *b, int number_rrr)

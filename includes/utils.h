@@ -28,6 +28,7 @@ char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
 char	*ft_strjoin_secure(char *s1, char *s2);
 int		ft_strlen_int(char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 /*
 All prototypes functions of ft_printf project.
 Directory : ft_printf
